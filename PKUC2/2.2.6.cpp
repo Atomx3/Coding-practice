@@ -71,13 +71,16 @@ void cont(int n, char a[100][100], int m){
         }
 
     }
-    // output the sick map(array) after being contaiminated in a specific m days.
+
+    /*
+    // output the whole map(array) after being contaiminated in a specific m days.
     for(int i=0;i<n;i++){
         for(int j=0;j<n;j++){
             cout<<setw(2)<<a[i][j];
         }
         cout<<endl;
     }
+    */
     cout<<sick_Index<<endl;
  
 }

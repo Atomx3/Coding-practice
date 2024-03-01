@@ -19,11 +19,11 @@ int date(int y, int m, int d){
     // if it is a leap year
     if((y%4==0 && y%100!=0)||(y%400==0)){
         // add one more day
-        if(d< days_leap[m-1])
+        if(m<12 && d< days_leap[m-1])
         {   d+=1;}
        
         // add one more month
-        else if((m<12 && d== days_leap[m-1])||d==days_leap[m-1]){
+        else if(m<12 && d== days_leap[m-1]){
                 m+=1;
                 d=1;
             }
@@ -33,16 +33,22 @@ int date(int y, int m, int d){
         {   y+=1;
             m=1;
             d=1;}
-
-    // if it is not a leap year
+    
     }
+    // if it is not a leap year
     else{
-        // add one more day
-        if(d< days_leap[m-1]-1)
+        // add one more day except feburary.
+        if(m!=2 && d< days_leap[m-1])
         {   d+=1;}
-  
-        // add one more month
-        else if( (m==2 && d==days_leap[m-1]-1) ||d==days_leap[m-1]) {
+        // add one more month except feburary.
+        else if(m!=2 && m!=12 && d== days_leap[m-1])
+        {   m+=1;
+            d=1;}
+        // add one more day on feburary.
+        else if(m==2 && d< days_leap[m-1]-1)
+        {   d+=1;}
+        // add one more month on feburary.
+        else if(m==2 && d==days_leap[m-1]-1) {
                 m+=1;
                 d=1;
             }
@@ -68,15 +74,31 @@ int date(int y, int m, int d){
 int main()
 {
 // input the date y-m-d;    
-
 while(cin>>y>>dash>>m>>dash>>d){
     // warn users to input right date.
-    if((y<1600||y>2999)||(m<1||m>12)
-    || (d<1 || d>days_leap[m-1]) ){
-    //    cout<<"please input right date"<<endl;
-    //    cout<<"1600<= year <=2999"<<endl;
-        continue;
+
+    // input for leap year.
+    if((y%4==0 && y%100!=0)||(y%400==0)){
+        if((y<1600||y>2999)||(m<1||m>12)
+        || (d<1 || d>days_leap[m-1])){
+            //cout<<"please input right date"<<endl;
+            //cout<<"1600<= year <=2999"<<endl;
+            continue;
+            }
+           
     }
+    // input for not a leap year.
+    else{
+        if( (y<1600||y>2999)||(m<1||m>12)
+        || (d<1 || (m==2 && d>days_leap[m-1]-1) 
+        ||(m!=2 && d>days_leap[m-1])) ){
+            //cout<<"please input right date"<<endl;
+            //cout<<"1600<= year <=2999"<<endl;
+            continue;
+            }
+            
+
+        } 
     // output the original date y-m-d; 
     //cout<<y<<dash<<m<<dash<<d<<endl;
 

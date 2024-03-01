@@ -52,9 +52,6 @@ void rate_sort(int n, int id[100], double rate[100]){
     for(int i=0; i<index+1;i++){
         cout<<id[i]<<endl;
     }
-  
-
-    
 
 }
 
@@ -76,7 +73,6 @@ for(int i=0; i<n; i++){
     rate[i]= (double) pos_num/pre_num;
     
 }
-cout<<endl;
 
 
 /*

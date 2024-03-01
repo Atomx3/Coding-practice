@@ -6,6 +6,7 @@ using namespace std;
 there are four lakes p, d, t, h, the area size are different from each other;
 four persons, each one could only tell one right rank number of the lake size.
 please find the four right ranke number. 
+读懂题，有两个人答对了同一个题目，因此4人总计回答对了3个，还有一个无人回答。
 
 // set 2D array and data.
 char
@@ -40,7 +41,11 @@ int main()
                     && ((p==1)+(t==4)+(h==2)+(d==3)==1)
                     )
                     {
-                        cout<<p<<' '<<d<<' '<<t<<' '<<h<<endl;
+                        cout<<p<<endl;
+                        cout<<d<<endl;
+                        cout<<t<<endl;
+                        cout<<h<<endl;
+                       //cout<<p<<' '<<d<<' '<<t<<' '<<h<<endl;
                     }
 
                 }
