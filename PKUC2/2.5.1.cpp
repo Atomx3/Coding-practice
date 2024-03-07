@@ -21,7 +21,7 @@ eg. input and output
 #include <iostream>
 using namespace std;
 
-int edgeSum(int **matrix, int m, int n){
+int edgeSum(int m, int n, int **matrix){
     int sum=0;
     for (int j=0; j<n; j++){
         // sum the first and last row
@@ -31,7 +31,7 @@ int edgeSum(int **matrix, int m, int n){
         // sum the first colum and last colum
         sum += matrix[i][0] + matrix[i][n-1];
     }
-    std::cout<<sum<<endl;
+    cout<<sum<<endl;
 
     //deallocate memory
     for(int i=0; i<m; i++){
@@ -61,9 +61,10 @@ int main()
                 cin>>matrix[i][j];
             }
         }
+        //call function and calculate.
+        edgeSum(m,n,matrix);
     }
-    //call function and calculate.
-    edgeSum(matrix,m,n);
+    
     
     //output the matrix
     // for(int i=0; i<m; i++){
