@@ -31,15 +31,18 @@ public:
             token = strtok(nullptr, ",");
         }
     }
-
-    float calculate() {
-        // get average scores for a student.
+    // get average scores for a student.
+    float calculate() { // return type could be int, if need int 
         float ave_scores = 0.0;
-        // stof, convert string to float.
+        //int ave_scores = 0;
+        //stof, convert string to float. 
         ave_scores = (stof(words[3]) + stof(words[4]) + stof(words[5]) + stof(words[6]))/4;
+        //stoi, convert string to int.
+        //ave_scores = (stoi(words[3]) + stoi(words[4]) + stoi(words[5]) + stoi(words[6]))/4;
         
         // Round to one decimal place
         ave_scores = round(ave_scores * 10) / 10.0;
+
         return ave_scores;
 
     }
