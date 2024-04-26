@@ -21,16 +21,16 @@
 由于官方平台不能给出错误原因，这需要花费大量时间猜测并测试各种可能的bug，作为初学者，若尚未学debug，或为了节省时间而未充分debug，以尽快上手为要务，没有在某些无关紧要的细节方面花太多时间纠错。
 
 
-Debugging case：
-% c++ 3.9.1.cpp
-3.9.1.cpp:83:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]
-for(auto p : v) {
-^
-3.9.1.cpp:83:16: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]
-for(auto p : v) {
-^
-2 warnings generated.
+Debugging case：  
+% c++ 3.9.1.cpp  
+3.9.1.cpp:83:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]  
+for(auto p : v) {  
+^  
+3.9.1.cpp:83:16: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]  
+for(auto p : v) {  
+^  
+2 warnings generated.  
 
 
-Compile standard in terminal of Macbook pro： 
+Compile standard in terminal of Macbook pro：  
 g++ -std=c++11 -o program 3.9.1.cpp
