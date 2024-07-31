@@ -1,0 +1,13 @@
+DATA SET 1
+ROOT
+|        d
+|        |        dir1
+|        |        |        d
+|        |        |        |        dir2
+|        |        |        |        f
+|        |        |        |        file2
+|        |        |        |        file3
+|        |        |        |        d
+|        |        |        |        |        dir3
+|        |        |        |        |        f
+|        |        |        |        |        file4
