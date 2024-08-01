@@ -1,0 +1,42 @@
+Creating a full deck:
+---------------------
+Ks As 2s 3s 4s 5s 6s 7s 8s 9s 0s Js Qs Kh Ah 2h 3h 4h 5h 6h 7h 8h 9h 0h Jh Qh Kd Ad 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd Kc Ac 2c 3c 4c 5c 6c 7c 8c 9c 0c Jc Qc 
+Shuffling the deck...
+---------------------
+4c 8h 2c 3c 8c Ah As 2s 7h 6d 4d 0d Kd 7d Jc 9c Qd 3s 9h Kc 8s 2d Qs 7c 6s 9d 3d 5h Qc 8d 7s 2h 5c 3h 6c Ks Qh Jh 4h 0c 0h 6h Ac Jd Kh 4s 5s Js 5d Ad 0s 9s 
+Shuffling the deck...
+---------------------
+8c 4d Ks 5s 8s 7h As 5h 8h Kc 0s Js 3c 7c 6c Qc Jd Jc 0h Qh 2d 3s Ad Qs Kh 5c 4s Ac 6d 6s 3h 9h 7d 5d 0c 4h Ah 2s 0d 9s 2c 7s 9c Kd 4c 2h Jh Qd 8d 3d 9d 6h 
+Making a smaller deck...
+Adding the Kc results in: Kc 
+Adding the Ah results in: Kc Ah 
+Adding the 2s results in: Kc Ah 2s 
+Adding the 4h results in: Kc Ah 2s 4h 
+Adding the As results in: Kc Ah 2s 4h As 
+Checking if the hand contains Kc got 1 [correct]
+Checking if the hand contains Kh got 0 [correct]
+Checking if the hand contains Ac got 0 [correct]
+Checking if the hand contains As got 1 [correct]
+Checking if the hand contains 3d got 0 [correct]
+Checking if the hand contains 2s got 1 [correct]
+Shuffling your smaller hand..
+As Kc 2s Ah 4h 
+Checking if the hand contains Kc got 1 [correct]
+Checking if the hand contains Kh got 0 [correct]
+Checking if the hand contains Ac got 0 [correct]
+Checking if the hand contains As got 1 [correct]
+Checking if the hand contains 3d got 0 [correct]
+Checking if the hand contains 2s got 1 [correct]
+and again..
+Ah 2s As Kc 4h 
+Checking if the hand contains Kc got 1 [correct]
+Checking if the hand contains Kh got 0 [correct]
+Checking if the hand contains Ac got 0 [correct]
+Checking if the hand contains As got 1 [correct]
+Checking if the hand contains 3d got 0 [correct]
+Checking if the hand contains 2s got 1 [correct]
+Doing 48M shuffles and counting hand frequency
+This may take a minute....................................................................................................
+Most common hand: Ah 2s 4h As Kc  0.835756% of the time (ideal: ~0.833333%)
+Least common hand: 4h Ah As Kc 2s  0.829806% of the time (ideal: ~0.833333%)
+// 这里统计结果表明，以上两种排序的手牌组合分别的出现概率，说明该题考虑了手牌顺序

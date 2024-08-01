@@ -1,0 +1,128 @@
+// passed all test, write down the test case by hand.
+
+Ks Qs As 0s 9s 4h 3h; Ks Qs As 0s 9s 4d 3d
+Ks Qs Js 0s 5c 9s 8s; Ks Qs Js 0s 5c 9c 8c
+Ks Kc 2c 3h 6c Qh Qd; Ks Kc 2c 3h 6c Qc Qs
+Ac 3c 6c 8c 0c As Ad; Ac 3c 6c 8c 0c Ah Jh
+As Ah 0c 0h 0s 2d 8d; As Ah 0c 0h 0s 2h 8c
+As 0d 0c 0h 0s 2d 8d; As 0d 0c 0h 0s 2h 8c
+As Ks Qs Js 0s 8s 4s; As Ks Qs Js 0c 8s 4h
+8c 7s As 2s 3s 4s 5s; 8c 7s As 2s 3s 4h 5h
+Ah 2h 3h 4h 5h Ac Ad; Ah 2h 3h 4h 5h As Jd
+As 2h 3s 4h 5c 8d 9d; As 2h 2c 2d 5c 8d 9d
+As Ah 3c 8h 3s 0d 9d; As Ah 3c 8h 3s 0c 9h
+Ah 9s 8d 2h 2c 0s 5h; Ah 9s 8d 3h 3c 0s 5h
+2h 2c Ah Ac 7c 0s 9s; 2h 2c Ah Ac 7c 0h 9c
+8c 8d 9c 9d 0c 0d 0h; 8c 8d 9c 9d 0c 9h 0s
+2s 2d 4s 4d 5d 5h 9h; 2s 2d 4s 4d 5d 5s 9c
+3s 3h 3d 9s 9h 8s 8h; 3s 3h 3c 9s 0h 8s 8h
+3s 4s 5h 6s 7s 5s 0h; 3s 4s 5h 6s 7s 0d Kh
+0d 0h 0c 9h 8h 7h 6h; 0d 0h 0c 9h 8h 7c 6c
+
+// flush vs. flush
+// board cards: As Ks Qs 0s 9s
+// private cards: 4h 3h vs. 4d 3d
+// As Ks Qs 0s 9s vs. As Ks Qs 0s 9s
+// comparison: tie 平局
+Ks Qs As 0s 9s 4h 3h; Ks Qs As 0s 9s 4d 3d
+
+// straight flush vs. straight
+// board cards: Ks Qs Js 0s 5c
+// private cards: 9s 8s vs. 9c 8c
+// Ks Qs Js 0s 9s vs. Ks Qs Js 0s 9c
+Ks Qs Js 0s 9s 8s 5c; Ks Qs Js 0s 9c 8c 5c
+
+
+// two pairs vs. two pairs
+// board cards: Ks Kc 6c 3h 2c
+// private cards: Qh Qd vs. Qc Qs
+// Ks Kc Qh Qd 6c vs. Ks Kc Qc Qs 6c
+// comparison: tie // Qh Qd vs. Qc Qs tie 
+Ks Kc 2c 3h 6c Qh Qd; Ks Kc 2c 3h 6c Qc Qs
+
+
+// flush vs. flush
+// board cards: Ac 3c 6c 8c 0c
+// private cards: As Ad vs. Ah Jh
+// Ac 3c 6c 8c 0c vs. Ac 3c 6c 8c 0c
+// comparison: tie  
+Ac 3c 6c 8c 0c As Ad; Ac 3c 6c 8c 0c Ah Jh
+// Ac 3c 6c 8c 0c As Ad; Ac 3c 6c 8c 0c Ad Ah wrong? 
+
+
+// full house vs. full house
+// board cards: As Ah 0c 0h 0s 
+// private cards: 2d 8d vs. 2h 8c
+// comparison: tie
+As Ah 0c 0h 0s 2d 8d; As Ah 0c 0h 0s 2h 8c
+
+// 4 of a kind vs. 4 of a kind.
+// board cards: As 0d 0c 0h 0s
+// private cards: 2d 8d vs. 2h 8c
+// comparison: tie
+As 0d 0c 0h 0s 2d 8d; As 0d 0c 0h 0s 2h 8c
+
+
+// royal flush vs. flush
+// board cards: As Ks Qs Js 8s 
+// private cards: 0s 4s vs. 0c 4h 
+// As Ks Qs Js 0s vs. As Ks Qs Js 8s
+// comparison: hand 1 wins
+As Ks Qs Js 0s 8s 4s; As Ks Qs Js 0c 8s 4h
+
+
+// straight flush vs. straight
+// board cards: 8c 7s As 2s 3s 
+// private cards: 4s 5s vs. 4h 5h
+// As 2s 3s 4s 5s vs. As 2s 3s 4h 5h
+// comparison: hand 1 wins 
+8c 7s As 2s 3s 4s 5s; 8c 7s As 2s 3s 4h 5h
+
+
+// straight flush vs. straight flush 
+// board cards: Ah 2h 3h 4h 5h
+// private cards: Ac Ad vs. As Jd
+// Ah 2h 3h 4h 5h vs. Ah 2h 3h 4h 5h
+// comparison: tie
+Ah 2h 3h 4h 5h Ac Ad; Ah 2h 3h 4h 5h As Jd
+
+// straight vs. 3 of a kind.
+// board cards: As 2h 5c 8d 9d
+// private cards: 3s 4h vs. 2c 2d
+// As 2h 3s 4h 5c vs. As 2h 2c 2d 9d
+// comparison: hand 1 wins 
+As 2h 3s 4h 5c 8d 9d; As 2h 2c 2d 5c 8d 9d
+
+// two pairs vs. two pairs
+// board cards: As Ah 8h 3c 3s
+// private cards: 0d 9d vs. 0c 9h // diamond > club & heart.
+// As Ah 3c 3s 0d vs. As Ah 3c 3s 0c 
+// comparison: tie  
+As Ah 3c 8h 3s 0d 9d; As Ah 3c 8h 3s 0c 9h
+
+
+// pair vs. pair
+// board cards: Ah 9s 8d 0s 5h
+// private cards: 2h 2c vs. 3h 3c
+// Ah 9s 2h 2c 0s vs. Ah 9s 3h 3c 0s
+// comparison: hand 2 wins
+Ah 9s 8d 2h 2c 0s 5h; Ah 9s 8d 3h 3c 0s 5h
+
+
+// two pairs vs. two pairs
+// board cards: 2h 2c Ah Ac 7c 
+// private cards: 0s 9s vs. 0h 9c
+// 2h 2c Ah Ac 0s vs. 2h 2c Ah Ac 0h 
+// comparison: hand 1 wins 
+2h 2c Ah Ac 7c 0s 9s; 2h 2c Ah Ac 7c 0h 9c
+
+
+// continue writing by hands.
+8c 8d 9c 9d 0c 0d 0h; 8c 8d 9c 9d 0c 9h 0s
+2s 2d 4s 4d 5d 5h 9h; 2s 2d 4s 4d 5d 5s 9c
+3s 3h 3d 9s 9h 8s 8h; 3s 3h 3c 9s 0h 8s 8h
+3s 4s 5h 6s 7s 5s 0h; 3s 4s 5h 6s 7s 0d Kh
+0d 0h 0c 9h 8h 7h 6h; 0d 0h 0c 9h 8h 7c 6c
+
+
+

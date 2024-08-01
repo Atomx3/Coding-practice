@@ -1,0 +1,26 @@
+aaaaa
+aaaaa bbbb
+aaaaa bbbbc
+aaaaaa bbbbb
+
+aaaaa aaaaa
+aaaaa bbbbb
+bbbba bbbba
+
+	  bbbbb
+aaaa  bbbbb
+aaabb bbbba
+aaaaa bbbbbb
+
+abbbb bbbba
+aabbb aobbb
+bbbcc bbbca
+aaaab bbbba pppp
+
+$$##* 54321
+abccd lkjop
+!@#$% ^&*()
+````` /////
+{{}}} \\|||
+????? ::::;
+NULL 00000
