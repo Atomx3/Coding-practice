@@ -1,0 +1,62 @@
+In a  previous function, you write a function
+
+ void rotate(char matrix[10][10])
+
+which performed 90 degree clockwise rotation of a 10x10
+matrix.   In that assignment, we gave you a compiled
+object file which read the input matrix from a file,
+called your function to do the rotation, and then
+printed the result to the screen. 
+
+In this assignment, you will write the code that we
+previously gave you, making the complete program on your own.
+You are encouraged to make use of your previously written
+rotate function in this assignment.
+
+For this problem, you will be writing a program which 
+performs a 90 degree clockwise rotation of a 10x10 matrix.
+There is nothing special about a 10x10 matrix---I just need
+to fix the matrix size, since we have not learned about dynamic
+memory allocation yet, so we do not have the knowledge needed
+to read in any size of matrix.
+
+To keep the input processing simple, the matrix will be a matrix
+of characters (so you will have something like
+  char matrix[10][10]
+in your program), which will be read from a file.  Each line
+in the input file should contain 10 characters (plus a newline).
+
+Requirements:
+=============
+  - Create a file called rotateMatrix.c
+	- Your program will take one command line argument, a string
+    specifying the input file to read.
+  - The input file should contain 10 lines, each of which
+    have 10 (non-newline) characters (plus a newline).
+  - Your program should then rotate this 90 degrees clockwise,
+    and print the result on stdout.
+    Note that sample.txt provides sample input, and 
+    sample.out provides sample output.
+  - If there are any errors, your program should print an
+    appropriate message to stderr, and exit with EXIT_FAILURE.
+  
+Hints:
+------
+  - You may find the strchr useful for error checking that
+    you read a proper line (10 non-newline characters, then a newline).
+
+這個作業要求你編寫一個程序來執行 10x10 矩陣的順時針旋轉 90 度操作。在之前的作業中，你已經編寫了一個名為 `rotate` 的函數來完成這個操作。在這個作業中，你需要編寫完整的程序，並使用你之前編寫的 `rotate` 函數。
+
+具體要求如下：
+
+1. 創建一個名為 `rotateMatrix.c` 的文件。
+2. 程序需要接受一個命令行參數，這個參數是一個字符串，指定要讀取的輸入文件。
+3. 輸入文件應包含 10 行，每行有 10 個字符（不包括換行符）。
+4. 程序應該將這個矩陣順時針旋轉 90 度，並將結果打印到標準輸出（stdout）。
+5. 如果有任何錯誤，程序應該打印適當的錯誤信息到標準錯誤輸出（stderr），並以 `EXIT_FAILURE` 退出。
+
+提示：
+- 你可能會發現 `strchr` 函數對於檢查讀取的行是否正確（10 個非換行字符，然後是一個換行符）很有用。
+
+😊
+    

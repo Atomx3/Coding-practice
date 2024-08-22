@@ -1,0 +1,83 @@
+For this assignment, you will be writing test cases for your next
+assignment.  As usual, the instructions for the next assignment are
+in next-README.
+
+For this assignment, we have created compiled binaries (in
+/usr/local/l2p/rot_matrix/  where rotateMatrix is correct,
+and the numbered ones are each broken in some way).
+
+As with 09_testing2, you will write a file called tests.txt,
+which will list the command line arguments you want to use to
+run the programs.   However, unlike 09_testing2, you will
+also want to create a wide variety of input files.  You can
+name them anything you want, as long as you save them in the
+current (26_tests_matrix_input) directory, and submit them
+along with tests.txt.
+
+As usual, we have provided run_all.sh
+
+Hint 1: think about various error cases that the programmer
+might have forgotten!
+
+Hint 2: The trickiest of these is one in which the programmer
+did not pay attention to a rather subtle, but common mistake
+pointed out in your reading titled 'Reading a File'!
+
+Hint 3:  If you find yourself needing to create an input
+file with non-typable/non-printable characters in it,
+you will want to do a few things.
+
+First, (after you have the file you want to edit open), you
+will want to force emacs to change the encoding it uses
+(so that it won't try to rewrite things in Unicode, for example):
+
+M-x revert-buffer-with-coding-system
+raw-text
+
+Once you have done this, you can do
+
+M-x hexl-mode
+
+to put emacs in hex editor mode.
+
+Then you will see hex values on the left, and their printable
+interpreations (or . for non-printable characters) on the right.
+Move the point to where you want to put a particular value, and do
+
+C-M-x
+
+then type the hex value (one byte, so two hex digits) that you want,
+and hit enter.  It will overwrite the current character with that value.
+Then you can save the file.
+
+
+這個作業要求你為下一個作業編寫測試用例。和往常一樣，下一個作業的說明在 next-README 文件中。
+
+對於這個作業，我們已經創建了編譯好的二進制文件（位於 /usr/local/l2p/rot_matrix/ 目錄下，其中 rotateMatrix 是正確的，而編號的文件則各有不同的錯誤）。
+
+和 09_testing2 一樣，你需要編寫一個名為 tests.txt 的文件，列出你想用來運行程序的命令行參數。然而，與 09_testing2 不同的是，你還需要創建各種輸入文件。你可以將它們命名為任何你想要的名字，只要你將它們保存在當前的 26_tests_matrix_input 目錄中，並與 tests.txt 一起提交即可。
+
+和往常一樣，我們提供了 run_all.sh 腳本。
+
+提示 1：考慮程序員可能忘記的各種錯誤情況！
+
+提示 2：其中最棘手的一個是程序員沒有注意到你在閱讀“Reading a File”時指出的一個相當微妙但常見的錯誤！
+
+提示 3：如果你發現自己需要創建一個包含不可輸入/不可打印字符的輸入文件，你需要做以下幾件事。
+
+首先，（在你打開要編輯的文件後），你需要強制 emacs 更改它使用的編碼（這樣它就不會嘗試以 Unicode 重新編寫內容，例如）：
+
+M-x revert-buffer-with-coding-system
+raw-text
+
+完成這一步後，你可以執行：
+
+M-x hexl-mode
+
+將 emacs 置於十六進制編輯模式。
+
+然後你會看到左邊是十六進制值，右邊是它們的可打印解釋（或不可打印字符用 . 表示）。將光標移動到你想要放置特定值的位置，然後執行：
+
+C-M-x
+
+然後輸入你想要的十六進制值（一個字節，即兩個十六進制數字），並按 Enter。它會用該值覆蓋當前字符。然後你可以保存文件。

@@ -43,7 +43,7 @@ int main(int argc, char **argv) {
 
     frequencyAnalysis(file, freq); // Perform frequency analysis on the text
     int maxFreqIndex = findMaxFrequencyIndex(freq); // Find the most frequent letter
-    int shift = (maxFreqIndex + 22) % ALPHABET_SIZE; // Calculate the shift
+    int shift = (maxFreqIndex + 22) % ALPHABET_SIZE; // Calculate the shift 
 
     if (shift < 0 || shift >= ALPHABET_SIZE) {
         fprintf(stderr, "Error: encryption key out of range\n");

@@ -1,0 +1,41 @@
+test case notice 
+
+# tests.txt
+
+## input1.txt
+Empty file
+
+## input2.txt
+with an error case: less than 10 characters in a line
+Or less than 10 rows.
+
+## input3.txt 
+with an error case: more than 10 characters in a line
+Or more than 10 rows.
+Add newline of empty at the end of the file.
+
+## input4.txt 
+with non-printable characters, such as
+控制字符：如\x01（开始标题），\x02（开始文本），\x03（结束文本）等。
+空白字符：如\x00（空字符），\x09（水平制表符），\x0A（换行符）等。
+其他特殊字符：如\x7F（删除字符）。
+mixed characters, newline etc.
+
+
+## input5.txt 
+Only one character
+
+
+## input6.txt 
+Long line such as : LONGLINELONGLINE123123123
+
+
+## input7.txt 
+Correct
+
+## input8.txt 
+file with newline characters 
+Special character such as "?" 
+
+
+Why this series of cases can not pass the examination? 

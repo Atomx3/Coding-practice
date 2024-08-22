@@ -1,0 +1,130 @@
+In a previous project, you wrote a function
+
+ void rotate(char matrix[10][10])
+
+which performed 90 degree clockwise rotation of a 10x10
+matrix.   In that assignment, we gave you a compiled
+object file which read the input matrix from a file,
+called your function to do the rotation, and then
+printed the result to the screen. 
+
+In this assignment, you will write the code that we
+previously gave you, making the complete program on your own.
+You are encouraged to make use of your previously written
+rotate function in this assignment.
+
+For this problem, you will be writing a program which 
+performs a 90 degree clockwise rotation of a 10x10 matrix.
+There is nothing special about a 10x10 matrix---I just need
+to fix the matrix size, since we have not learned about dynamic
+memory allocation yet, so we do not have the knowledge needed
+to read in any size of matrix.
+
+To keep the input processing simple, the matrix will be a matrix
+of characters (so you will have something like
+  char matrix[10][10]
+in your program), which will be read from a file.  Each line
+in the input file should contain 10 characters (plus a newline).
+
+Requirements:
+=============
+  - Create a file called rotateMatrix.c
+	- Your program will take one command line argument, a string
+    specifying the input file to read.
+  - The input file should contain 10 lines, each of which
+    have 10 (non-newline) characters (plus a newline).
+  - Your program should then rotate this 90 degrees clockwise,
+    and print the result on stdout.
+    Note that sample.txt provides sample input, and 
+    sample.out provides sample output.
+  - If there are any errors, your program should print an
+    appropriate message to stderr, and exit with EXIT_FAILURE.
+  
+Hints:
+------
+  - You may find the strchr useful for error checking that
+    you read a proper line (10 non-newline characters, then a newline).
+
+
+---
+
+# 旋转矩阵程序
+
+## 简介
+在之前的项目中，你编写了一个函数
+
+```c
+void rotate(char matrix[10][10])
+```
+
+该函数执行了一个10x10矩阵的顺时针90度旋转。在那个作业中，我们给了你一个编译好的目标文件，该文件从文件中读取输入矩阵，调用你的函数进行旋转，然后将结果打印到屏幕上。
+
+在这个作业中，你将编写我们之前给你的代码，自己完成整个程序。我们鼓励你在这个作业中使用你之前编写的旋转函数。
+
+## 问题描述
+在这个问题中，你将编写一个程序，执行一个10x10矩阵的顺时针90度旋转。10x10矩阵并没有什么特别之处——我只是需要固定矩阵的大小，因为我们还没有学习动态内存分配，所以我们没有读取任意大小矩阵的知识。
+
+为了简化输入处理，矩阵将是一个字符矩阵（所以你的程序中会有类似
+
+```c
+char matrix[10][10]
+```
+
+的内容），该矩阵将从文件中读取。输入文件中的每一行应包含10个字符（加一个换行符）。
+
+## 要求
+=============
+  - 创建一个名为`rotateMatrix.c`的文件
+  - 你的程序将接受一个命令行参数，一个指定要读取的输入文件的字符串
+  - 输入文件应包含10行，每行有10个（非换行）字符（加一个换行符）
+  - 你的程序应将其顺时针旋转90度，并将结果打印到标准输出
+  - 请注意，`sample.txt`提供了示例输入，`sample.out`提供了示例输出
+  - 如果有任何错误，你的程序应打印适当的消息到标准错误输出，并以`EXIT_FAILURE`退出
+
+## 提示
+------
+  - 你可能会发现`strchr`函数对于检查你是否读取了正确的行（10个非换行字符，然后是一个换行符）很有用。
+
+
+
+---
+
+# 旋转矩阵程序
+
+## 简介
+该程序读取一个10x10的字符矩阵文件，将其顺时针旋转90度，并将结果打印到标准输出。如果出现任何错误，程序将打印适当的错误信息到标准错误输出，并以`EXIT_FAILURE`退出。
+
+## 文件
+- `rotateMatrix.c`: 包含程序代码的文件。
+
+## 使用方法
+
+编译程序：
+```sh
+gcc -o rotateMatrix rotateMatrix.c
+```
+
+运行程序：
+```sh
+./rotateMatrix <input_file>
+```
+其中`<input_file>`是包含10x10字符矩阵的输入文件。
+
+## 输入文件格式
+输入文件应包含10行，每行有10个字符（加一个换行符）。
+
+## 程序功能
+1. 从命令行参数指定的文件中读取10x10字符矩阵。
+2. 检查读取文件时是否有错误，并确保每行恰好有10个字符加一个换行符。
+3. 使用`rotate`函数将矩阵顺时针旋转90度。
+4. 将旋转后的矩阵打印到标准输出。
+
+## 错误处理
+- 如果命令行参数不正确，程序将打印使用方法并退出。
+- 如果打开文件时出错，程序将打印错误信息并退出。
+- 如果读取文件时出错或行长度不正确，程序将打印错误信息并退出。
+
+---
+
+希望这个说明对你有帮助！如果你有任何问题或需要进一步的帮助，请随时告诉我。
+    
