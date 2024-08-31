@@ -1,0 +1,4 @@
+# the following files will be ignored by Git:
+outname.o
+outname_test
+outname_test.o

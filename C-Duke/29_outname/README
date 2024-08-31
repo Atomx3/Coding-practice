@@ -1,0 +1,41 @@
+In a future assignment, you are going to write a program which reads
+some input, does some manipulations, and produces output in another file.
+Right now, you are going to write a function which will be useful to you
+in that assignment, which takes the input filename, and produces the output
+file name. The output file name should be the same as the input file name
+with ".counts" on the end.  So, for example, if the input filename (inputName)
+is "input.txt", your function should return "input.txt.counts".
+
+Note that your function needs to use malloc to allocate memory to hold
+the string that it will return as its answer.
+
+Your function should have the following signature:
+
+ char * computeOutputFileName(const char * inputName)
+
+and you should write it in the outname.c file.
+You can make and test with the main function found in outname_test.c.
+As always, be sure your program valgrinds cleanly.
+
+
+---
+
+在未来的作业中，你将编写一个程序，该程序读取一些输入，进行一些操作，
+并在另一个文件中生成输出。现在，你将编写一个在该作业中有用的函数，
+该函数接受输入文件名，并生成输出文件名。输出文件名应与输入文件名相同，
+但末尾加上“.counts”。例如，如果输入文件名（inputName）是“input.txt”，
+你的函数应返回“input.txt.counts”。
+
+注意，你的函数需要使用 `malloc` 来分配内存，以保存其作为答案返回的字符串。
+
+你的函数应具有以下签名：
+
+```c
+char * computeOutputFileName(const char * inputName)
+```
+
+你应该在 `outname.c` 文件中编写它。你可以使用 `outname_test.c` 
+中的主函数进行编译和测试。像往常一样，确保你的程序在 Valgrind 中运行干净。
+
+
+
