@@ -21,5 +21,10 @@ for(auto p : v) {
 2 warnings generated.  
 
 
-Compile standard in terminal of Macbook pro：  
+## Standard compile in terminal of Macbook pro：  
 g++ -std=c++11 -o program 3.9.1.cpp
+./program 
+
+## Simple compile 
+gcc program.c -o program
+./program 

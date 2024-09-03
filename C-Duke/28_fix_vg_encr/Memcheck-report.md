@@ -70,7 +70,6 @@ gcc -ggdb3 -Wall -Werror -std=gnu99 -pedantic -o encrypt encrypt.c
 /*                                                              The message ==6179== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 104 from 19) indicates that Valgrind did not find any errors in your code during this run. The “suppressed” part refers to errors that Valgrind is configured to ignore, which is common and usually not a concern.
 
 It looks like your code is running cleanly without any memory errors. Great job! 🎉
-
 */            
 
 Saving session...

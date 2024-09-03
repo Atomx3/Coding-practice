@@ -25,9 +25,11 @@ void readAndSortFile(FILE *file) {
   size_t len = 0;       // Length of the buffer
 
   // Read lines from the file
+  // -1 means return value of getline is EOF, error stops loops.
   while (getline(&line, &len, file) != -1) {
     // If the array is full, double its capacity
     if (count == capacity) {
+    // ? : Ternary Operator, compact way of if-else statement.
       capacity = capacity ? capacity * 2 : 1;
       lines = realloc(lines, capacity * sizeof(*lines));
       if (lines == NULL) {
@@ -35,7 +37,7 @@ void readAndSortFile(FILE *file) {
         exit(EXIT_FAILURE);
       }
     }
-    // Duplicate the line and store it in the array
+  // Duplicate the line and store it in the array
     lines[count++] = strdup(line);
     if (lines[count - 1] == NULL) {
       perror("strdup");
@@ -56,7 +58,7 @@ void readAndSortFile(FILE *file) {
 }
 
 int main(int argc, char **argv) {
-  // If no arguments are provided, read from standard input
+  // If no arguments are provided, read from standard input(keyboard)
   if (argc == 1) {
     readAndSortFile(stdin);
   } else {

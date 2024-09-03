@@ -1,0 +1,148 @@
+
+*********************************************************************
+** REMINDER: your programs  MUST valgrind cleanly for full credit! **
+*********************************************************************
+
+For this problem, you will be completing a partially written 
+minesweeper game.  This game will be played on a text interface
+(not a GUI---we haven't learned anything about those).
+
+If you are not familiar with the game of minesweeper, you might
+take a minute to read up about it on the internet, but you don't
+need much game expertise to do this assignment.
+
+I have provided code for an almost working minesweeper, except
+that I have deleted the code for 4 functions:
+
+board_t * makeBoard(int w, int h, int numMines)
+int countMines(board_t * b, int x, int y)
+int checkWin(board_t * b)
+void freeBoard(board_t * b)
+
+
+Your job is to implement each of these functions (which all have a
+//WRITE ME comment to make them easy to find).  A brief description
+of each follows:
+
+
+ - makeBoard: this function should malloc and initialize a board_t
+   representing the board.  The parameters specify the width
+   and height of the board, as well as the number of mines.
+   You will also need to call malloc (multiple times)
+   to allocate space for the 2D array "board".
+   This function should fill in all squares on the board with
+   UNKNOWN, then call addRandomMine an appropriate number of times
+   (i.e., numMines) to "randomly" place mines on the board.
+   Note that the fields of your board_t must be initailzed before
+   you call addRandomMine.
+   Also note that the mine generation is pseudo random and will not
+   change if you re-run the program multiple times with the same
+   parameters.
+
+   Note that the layout of b->board should be such that it is indexed
+     b->board[y][x]
+   where y is between 0 and the height and x is between 0 and the width.
+
+ - countMines: this funciton takes a board_t, and an (x,y) coordinate.
+   It should count the mines in the 8 squares around that (x,y) 
+   coordinate, and return that count.  Note that a mine may be
+   indicated by a square on the board either being HAS_MINE or
+   KNOWN_MINE.  You can use the IS_MINE macro to test both cases:
+        IS_MINE(b->board[ny][nx]) 
+   (where b is the board_t, and (nx,ny) are the coordinates you 
+    want to check).  Be careful not to go out of bounds of the array.
+
+ - checkWin: this funciton takes a board_t and see if the game has
+   been won.  The game is won when no squares are UNKNOWN. Return 0
+   if the game has not been won, 1 if it has.
+
+ - freeBoard: This function takes a board_t and frees all memory
+   associated with it (including the array inside of it).  That is,
+   freeBoard should undo all the allocations made by a call to makeBoard.
+
+Note: You should NOT change any of the other provided functions!
+
+
+Once you have these all working, you should have a playable game of 
+minesweeper.  Note that there are a few differences in game play
+from the "standard" game:
+
+ - You select a square by entering its x (column) and y (row) coordinate.
+   The x coordinates are listed across the top and the y are listed
+   down the left side to reduce counting.
+
+ - The game will automatically figure out the "obvious" squares:
+   both mines and non-mined spaces.  It will reveal these too you 
+   as soon as it considers them trivial to figure out.  
+ 
+ - You cannot manually mark a square that you suspect has a mine
+
+Once your code is complete, submit minesweeper.c 
+
+
+*********************************************************************
+** 提醒：你的程序必须在 valgrind 下无错误才能获得满分！**
+*********************************************************************
+
+对于这个问题，你将完成一个部分编写的扫雷游戏。这个游戏将在文本界面上进行（不是 GUI——我们还没有学习过这些）。
+
+如果你不熟悉扫雷游戏，你可以花点时间在网上了解一下，但你不需要太多的游戏专业知识来完成这个作业。
+
+我已经提供了一个几乎可以运行的扫雷游戏代码，除了以下四个函数的代码被删除了：
+
+```c
+board_t * makeBoard(int w, int h, int numMines)
+int countMines(board_t * b, int x, int y)
+int checkWin(board_t * b)
+void freeBoard(board_t * b)
+```
+
+你的任务是实现这些函数（它们都有一个 //WRITE ME 注释，便于查找）。以下是每个函数的简要描述：
+
+- **makeBoard**：这个函数应该使用 malloc 并初始化一个表示棋盘的 board_t。
+参数指定了棋盘的宽度和高度，以及地雷的数量。
+你还需要多次调用 malloc 来为二维数组 "board" 分配空间。
+这个函数应该将棋盘上的所有方块填充为 UNKNOWN，
+然后调用适当次数的 addRandomMine（即 numMines）来“随机”放置地雷。
+注意，在调用 addRandomMine 之前，必须初始化 board_t 的字段。
+另外，地雷的生成是伪随机的，如果你用相同的参数多次运行程序，地雷的位置不会改变。
+
+  注意，b->board 的布局应该是这样的：
+  ```c
+  b->board[y][x]
+  ```
+  其中 y 在 0 到高度之间，x 在 0 到宽度之间。
+
+- **countMines**：这个函数接受一个 board_t 和一个 (x,y) 坐标。
+它应该计算该 (x,y) 坐标周围 8 个方块中的地雷数量，并返回该数量。
+注意，地雷可能由棋盘上的方块表示为 HAS_MINE 或 KNOWN_MINE。你可以使用 IS_MINE 宏来测试这两种情况：
+  ```c
+  IS_MINE(b->board[ny][nx])
+  ```
+  （其中 b 是 board_t，(nx,ny) 是你要检查的坐标）。注意不要超出数组的边界。
+
+- **checkWin**：这个函数接受一个 board_t 并检查游戏是否获胜。
+当没有方块是 UNKNOWN 时，游戏获胜。
+如果游戏没有获胜，返回 0；如果获胜，返回 1。
+
+- **freeBoard**：这个函数接受一个 board_t 并释放与之相关的所有内存（包括其中的数组）。
+也就是说，freeBoard 应该撤销 makeBoard 调用所做的所有分配。
+
+注意：你不应该更改任何其他提供的函数！
+
+一旦你完成了这些代码，你应该有一个可玩的扫雷游戏。注意，游戏玩法与“标准”游戏有一些不同：
+
+- 你通过输入 x（列）和 y（行）坐标来选择一个方块。x 坐标列在顶部，y 列在左侧，以减少计数。
+
+- 游戏会自动找出“明显”的方块：包括地雷和非地雷方块。一旦它认为这些方块很容易确定，它会立即向你显示。
+
+- 你不能手动标记你怀疑有地雷的方块。
+
+完成代码后，提交 minesweeper.c。
+
+Source: Conversation with Copilot, 03/09/2024
+(1) How to Play Minesweeper (with Pictures) - wikiHow. https://www.wikihow.com/Play-Minesweeper.
+(2) How to Play Minesweeper : 6 Steps - Instructables. https://www.instructables.com/How-to-play-minesweeper/.
+(3) How to Play Minesweeper: A Step-by-Step Guide - Solve Your Tech. https://www.solveyourtech.com/how-to-play-minesweeper-a-step-by-step-guide/.
+(4) How to Play Minesweeper. https://www.howtogeek.com/how-to-play-minesweeper/.
+(5) How To Play Minesweeper: A Beginner's Guide To The Game - The Odyse Online. https://theodyseonline.com/how-to-play-minesweeper/.
