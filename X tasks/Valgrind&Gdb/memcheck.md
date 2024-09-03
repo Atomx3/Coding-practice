@@ -7,7 +7,7 @@ https://valgrind.org
 
 ## error report 1
 Heap Block Overrun: The line x[10] = 0; is trying to write to the 11th element of the array x, which only has 10 elements (indices 0 to 9). This causes an invalid write.
-Memory Leak: The allocated memory for x is not freed before the function f returns, 
+Memory Leak: The allocated memory for x is not freed before the function f returns,
 causing a memory leak.
 
 ```% gcc -g -o memcheck memcheck.c ```
@@ -26,7 +26,7 @@ causing a memory leak.
 ==27535==    by 0x10001551D: (below main) (in /usr/lib/dyld)
 // After a memory block of size 40 bytes, invalid write is happening.
 // which was allocated using malloc.
-// 0x100223cb8 is the address where the invalid write occurred, 
+// 0x100223cb8 is the address where the invalid write occurred,
 // which is right after the allocated block of size 40 bytes.
 ==27535==  Address 0x100223cb8 is 0 bytes after a block of size 40 alloc'd
 ==27535==    at 0x1001EDFBB: malloc (in /usr/local/Cellar/
@@ -41,7 +41,7 @@ causing a memory leak.
 ## // error reports 2
 Ensure you access only valid indices of the allocated array.
 
-the leak is occurring within the system libraries 
+the leak is occurring within the system libraries
 (libobjc.A.dylib) rather than your own code
 ```% valgrind --leak-check=full --track-origins=yes ./memcheck```
 
@@ -54,12 +54,12 @@ the leak is occurring within the system libraries
 ==28033== // to the instance of your program being analyzed.
 
 // an overview of memory usage
-==28033== HEAP SUMMARY: 
+==28033== HEAP SUMMARY:
 ==28033==     in use at exit: 8,411 bytes in 168 blocks
 ==28033==   total heap usage: 172 allocs, 4 frees, 8,523 bytes allocated
 ==28033==
-// Call Stack: The call stack shows that the leak 
-// is occurring within the libobjc.A.dylib library, 
+// Call Stack: The call stack shows that the leak
+// is occurring within the libobjc.A.dylib library,
 // specifically in the realizeClassWithoutSwift function.
 ==28033== 32 bytes in 1 blocks are definitely lost in loss record 8 of 28
 ==28033==    at 0x1001F224C: calloc (in /usr/local/Cellar/valgrind/HEAD-93191c1/libexec/valgrind/vgpreload_memcheck-amd64-darwin.so)
@@ -68,17 +68,17 @@ the leak is occurring within the system libraries
 ==28033==    by 0x7FF804DE08F8: realizeClassWithoutSwift(objc_class*, objc_class*) (in /usr/lib/libobjc.A.dylib)
 ==28033==    by 0x7FF804DDEB59: map_images_nolock (in /usr/lib/libobjc.A.dylib)
 ==28033==    by 0x7FF804DDD4DB: map_images (in /usr/lib/libobjc.A.dylib)
-==28033==    by 0x10001F2CA: invocation function for block 
-	in dyld4::RuntimeState::setObjCNotifiers(void (*)(unsigned int, 
+==28033==    by 0x10001F2CA: invocation function for block
+	in dyld4::RuntimeState::setObjCNotifiers(void (*)(unsigned int,
 	char const* const*, mach_header const* const*), void (*)
-	(char const*, mach_header const*), void (*)(char const*, 
+	(char const*, mach_header const*), void (*)(char const*,
 	mach_header const*)) (in /usr/lib/dyld)
 ``
 
-/* Ignore System Library Leaks: 
-If the memory leak is within system libraries and not your code, 
-you can generally ignore these leaks. 
-They are often outside your control and may not impact your 
+/* Ignore System Library Leaks:
+If the memory leak is within system libraries and not your code,
+you can generally ignore these leaks.
+They are often outside your control and may not impact your
 application’s performance significantly.行·
 */
 
@@ -97,7 +97,7 @@ run Valgrind, it will report where the uninitialized value was created.
 ==12260==    at 0x40052D: f (uninit.c:4)
 ``
 
-## Valgrind + GDB 
+## Valgrind + GDB
 ``` gcc -g -o my_program my_program.c ("memcheck" in current program)```
 
 ``` valgrind --vgdb=full --vgdb-error=0 ./my_program ```
@@ -121,7 +121,7 @@ output as below
 
 ``
 
-## GDB 
+## GDB
 
 open another terminal and input command line.
 
@@ -145,7 +145,7 @@ For help, type "help".
 Type "apropos word" to search for commands related to "word"...
 Reading symbols from ./memcheck...
 Reading symbols from /Users/atom.x/GitHub/test/memcheck.dSYM/Contents/Resources/DWARF/memcheck...
-(gdb) 
+(gdb)
 ``
 
 ```
@@ -172,15 +172,15 @@ Program received signal SIGTRAP, Trace/breakpoint trap.
 ```
 8	     x[10] = 0;        // problem 1: heap block overrun
 (gdb) list
-3	
+3
 4	// error reports, by below section of code
 5	  void f(void)
 6	  {
 7	     int* x = malloc(10 * sizeof(int));
 8	     x[10] = 0;        // problem 1: heap block overrun
 9	  }                    // problem 2: memory leak -- x not freed
-10	
-11	
+10
+11
 12	// fix the above problem
 ```
 
@@ -220,10 +220,9 @@ main () at memcheck.c:25
 ## install GDB
 
 ``` brew install gdb ```
- 
+
 Code Signing in the Keychain Access application of Macbook pro.
 
 Configure GDB
 
 ``` echo "set startup-with-shell off" >> ~/.gdbinit ```
-

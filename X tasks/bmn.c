@@ -1,15 +1,13 @@
-/*
-Batch modify name
-批量修改文件名
-
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
+// bath change the file name such as
+// C programming practicing resources e698726c9a1d4750818a368764a8f78a.md
+// C programming practicing resources.md
+// because the downloaded files of Notion all include long name.
 
-void renameFiles(const char *directory, const char *newRoomName) {
+void renameFiles(const char *directory) {
     struct dirent *entry;
     DIR *dp = opendir(directory);
 
@@ -24,12 +22,24 @@ void renameFiles(const char *directory, const char *newRoomName) {
             char newName[256];
             snprintf(oldName, sizeof(oldName), "%s/%s", directory, entry->d_name);
 
-            // Extract date and time from the old file name
-            char date[11], time[9];
-            sscanf(entry->d_name, "%10s %8s", date, time);
+            // Remove spaces and long strings from the file name
+            char *token = strtok(entry->d_name, " ");
+            char tempName[256] = "";
+            while (token != NULL) {
+                if (strlen(token) <= 20) {
+                    strcat(tempName, token);
+                }
+                token = strtok(NULL, " ");
+            }
+
+            // Get the file extension
+            char *ext = strrchr(entry->d_name, '.');
+            if (ext != NULL) {
+                strcat(tempName, ext); // Keep the original extension
+            }
 
             // Create the new file name
-            snprintf(newName, sizeof(newName), "%s/%s %s %s", directory, date, time, newRoomName);
+            snprintf(newName, sizeof(newName), "%s/%s", directory, tempName);
 
             // Rename the file
             if (rename(oldName, newName) != 0) {
@@ -44,10 +54,9 @@ void renameFiles(const char *directory, const char *newRoomName) {
 }
 
 int main() {
-    const char *directory = "./files"; // Directory containing the files
-    const char *newRoomName = "HOXDAO 280250508"; // New room name
+    const char *directory = "."; // Use current directory
 
-    renameFiles(directory, newRoomName);
+    renameFiles(directory);
 
     return 0;
 }

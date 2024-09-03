@@ -1,0 +1,65 @@
+# Duke- C3w1- Read pointer2
+
+Date: December 11, 2023
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+int f(int **r, **s){
+int temp = **r;
+int temp2 = **s;
+int *z = *r;
+*r = *s;
+*s = z;
+printf("**r = %d\n",**r);
+printf("**s = %d\n",**s);
+*z += 3;
+**s -= 8;
+**r -= 19;
+return temp + temp2;
+}
+
+int main(void) {
+int a = 80;
+int b = 12;
+int * p = &a;
+int * q = &b;
+int x = f(&p, &q);
+printf("x = %d\n", x);
+printf("*p = %d\n", *p);
+printf("*q = %d\n", *q);
+printf("a = %d\n", a);
+printf("b = %d\n", b);
+return EXIT_SUCCESS;
+}
+
+```
+
+**Output** 
+
+> **r = 12
+**s = 80
+x = 92
+*p = -7
+*q = 75
+a = 75
+b = -7
+> 
+
+**execute the code by hand and write the output.**
+
+> **r = 12
+**s = 80
+~~x = 65
+*p = 80
+*q = 12
+a = 80
+b = 12~~
+> 
+
+why `return temp + temp2 = 12+80?`the values change of below variables don’t affect it.
+
+`*z += 3;
+**s -= 8;
+**r -= 19;`
