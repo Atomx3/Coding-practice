@@ -1,0 +1,96 @@
+ For this problem, we will address the following tasks:
+
+ - print the counts to a file
+ - free the memory for the counts
+
+We'll note that we are not going to write the part of this program where
+we read the input file and compute the counts until the next problem.  However, we will
+still want to be able to test our code.   We can do this, by having a main
+function which constructs the counts from a hard coded set of data, skipping
+the details of the actual program (this is an example of a test scaffold).
+
+Our test scaffold can benefit from some functionality that (if we think a bit ahead)
+will be useful to abstract out into a couple functions, so we can re-use that code
+in the next problem.  (Abstracting all of this code out into function is also good because
+it hides the implementation details: none of the code in the main function
+we provide cares what the names/types of the fields in the counts_t structure
+are, which you will make shortly).
+
+First, go to counts.h. Here, you will find two empty struct declarations.  You will
+need to fill these in.  The first should reflect the information about one count.
+That is, for some particular string, how many times have we seen it so far.
+The second, should have an array of the first, as well as the size of that array.
+You should also include a field in this struct to count unknown names.
+
+Next, you should go to counts.c, and write the four functions there.
+
+The first, createCounts should allocate memory for a counts_t structure, and initialize
+it to represent that nothing has been counted yet.
+
+The next function, addCount, should increment the count for the corresponding name.  Note
+that name will be NULL in the case of something that is unknown, so your code must account
+for this case.   
+
+The third function, printCounts takes a counts_t and prints that information to 
+the FILE outFile. Recall from the description of the entire problem, that this 
+function should print in the format:
+
+Captain: 1
+Commander: 2
+Lt. Commander: 1
+<unknown> : 1
+
+These should appear in the order that the name is first added, with unknown always
+appearing last.
+
+***If there are no unknown values, you should not print a line for unknown.  That
+is, you should NEVEr print
+<unknown> : 0
+
+
+Finally, you should write freeCounts, which should free all the memory associated with
+a counts_t.  
+
+We have provided a main in countsTestc which creates a counts_t (using your createCounts function), adds some names to it (using your addCount function), prints the result
+to stdout (using your printCounts) function, then frees the memory (using your freeCounts).
+
+Test and debug these functions before proceeding.
+
+对于这个问题，我们将解决以下任务：
+
+- 将计数结果打印到文件
+- 释放计数的内存
+
+我们注意到，我们不会编写读取输入文件和计算计数的部分程序，直到下一个问题。然而，我们仍然希望能够测试我们的代码。我们可以通过一个主函数来实现这一点，该函数从一组硬编码的数据构造计数，跳过实际程序的细节（这是一个测试脚手架的例子）。
+
+我们的测试脚手架可以从一些功能中受益，如果我们提前考虑，这些功能将有助于抽象出一些函数，以便在下一个问题中重用这些代码。（将所有这些代码抽象到函数中也是好的，因为它隐藏了实现细节：我们提供的主函数中的代码不关心 counts_t 结构中的字段名称/类型是什么，你将很快创建这些字段）。
+
+首先，转到 counts.h。在这里，你会发现两个空的结构声明。你需要填充这些声明。第一个应该反映一个计数的信息。也就是说，对于某个特定的字符串，我们到目前为止看到了多少次。第二个应该有第一个的数组，以及该数组的大小。你还应该在这个结构中包含一个字段来计数未知名称。
+
+接下来，你应该转到 counts.c，并在那里编写四个函数。
+
+第一个函数 createCounts 应该为 counts_t 结构分配内存，并初始化它以表示尚未计数任何内容。
+
+下一个函数 addCount 应该增加相应名称的计数。注意，在某些未知情况下，名称将为 NULL，因此你的代码必须考虑这种情况。
+
+第三个函数 printCounts 接受一个 counts_t 并将该信息打印到 FILE outFile。回想一下整个问题的描述，该函数应按以下格式打印：
+
+```
+Captain: 1
+Commander: 2
+Lt. Commander: 1
+<unknown> : 1
+```
+
+这些应该按照名称首次添加的顺序出现，未知的总是最后出现。
+
+***如果没有未知值，你不应该打印未知的行。也就是说，你永远不应该打印
+```
+<unknown> : 0
+```
+
+最后，你应该编写 freeCounts，它应该释放与 counts_t 相关的所有内存。
+
+我们在 countsTest.c 中提供了一个主函数，该函数创建一个 counts_t（使用你的 createCounts 函数），添加一些名称（使用你的 addCount 函数），将结果打印到标准输出（使用你的 printCounts 函数），然后释放内存（使用你的 freeCounts 函数）。
+
+在继续之前测试和调试这些函数。
