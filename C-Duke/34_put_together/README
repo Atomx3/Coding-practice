@@ -1,0 +1,74 @@
+We are now ready for the last piece:
+ - compute the counts of  values that appear in a particular input file
+
+And then to put all the pieces together.  Before you start, notice that
+we have placed symlinks (short for "symbolic links") to the files you worked on
+in the previous problems.  Symbolic links basically mean that when you open
+the file, it will open the file it links to (so opening counts.c will open
+../33_counts/counts.c ).  
+
+For this problem, you will start by writing the function:
+
+  counts_t * countFile(const char * filename, kvarray_t * kvPairs)
+
+in the main.c file. Note that you will find it quite helpful to use several of the functions
+you wrote in the previous problems (in fact, much of the work should already be done).
+
+Once you have written countFile, it is time to write your main function.  You 
+will also write this function in the main.c file. Note that we have already
+written the high-level algorithm for the main function as comments, so you can
+just translate this algorithm to code.  You will also need to add some error
+checking. 
+
+Once you finish writing these two functions, you should have a working program!
+Compile, test, and debug it.
+
+We have provided two test cases, and the correct output for them.
+
+The first test case:
+  ./count_values kvs1.txt list1a.txt list1b.txt
+
+should produce two output files (list1a.txt.counts and list1b.txt.counts).
+The correct contents can be found in list1a.txt.ans and list1b.txt.ans.
+
+The second test case:
+  ./count_values kvs2.txt list2a.txt list2b.txt list2c.txt
+
+should produce 3 files (named appropriately) and the answers can be found in
+similarly named .ans files.
+
+Use git add . to submit your work.
+
+我们现在准备好最后一部分了：
+- 计算出现在特定输入文件中的值的计数
+
+然后将所有部分组合在一起。在开始之前，请注意我们已经将符号链接（简称“符号链接”）放置到您在前面问题中处理的文件中。
+符号链接基本上意味着当您打开文件时，它将打开它链接到的文件（因此打开 counts.c 将打开 ../33_counts/counts.c）。
+
+对于这个问题，您将从编写函数开始：
+
+```c
+counts_t * countFile(const char * filename, kvarray_t * kvPairs)
+```
+
+在 main.c 文件中。请注意，使用您在前面问题中编写的几个函数会非常有帮助（实际上，大部分工作应该已经完成）。
+
+一旦您编写了 countFile 函数，就该编写主函数了。您也将在 main.c 文件中编写此函数。请注意，我们已经将主函数的高级算法编写为注释，因此您只需将此算法翻译为代码即可。您还需要添加一些错误检查。
+
+一旦完成这两个函数的编写，您应该会有一个工作程序！编译、测试和调试它。
+
+我们提供了两个测试用例及其正确输出。
+
+第一个测试用例：
+```sh
+./count_values kvs1.txt list1a.txt list1b.txt
+```
+应该生成两个输出文件（list1a.txt.counts 和 list1b.txt.counts）。正确的内容可以在 list1a.txt.ans 和 list1b.txt.ans 中找到。
+
+第二个测试用例：
+```sh
+./count_values kvs2.txt list2a.txt list2b.txt list2c.txt
+```
+应该生成 3 个文件（命名适当），答案可以在类似命名的 .ans 文件中找到。
+
+使用 `git add .` 提交您的工作。
