@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <assert.h>
 #include "deck.h"
+// this program will be modified latter by course 4 ../C4PRJ1_DECK/deck.c  
 
 // 打印手牌的函数，它接受一个指向deck_t结构的指针。
 // 这个结构体包含了一个指向card_t指针数组的指针，以及一个表示牌的数量的size_t类型的变量。
@@ -54,4 +55,3 @@ void assert_full_deck(deck_t * d) {
     assert(deck_contains(d, card));
   }
 }
-

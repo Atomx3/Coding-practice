@@ -251,3 +251,6 @@ analogies for each of the options in the context of programming:
 5. **Book**: The **entire program or software application**. Just as a book is a complete work composed of chapters, a program is a complete application composed of modules and functions.
 
 These analogies help illustrate how different components of a program relate to elements of writing.
+
+# Module 4
+## Monte Carlo simulation

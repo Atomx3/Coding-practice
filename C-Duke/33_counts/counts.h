@@ -1,6 +1,6 @@
 #ifndef __COUNTS_H__
 #define __COUNTS_H__
-
+// ../34_put_together, symbolink to ../33_counts/
 // Structure to hold the count for a single name
 struct _one_count_t {
   char * name;  // The name being counted

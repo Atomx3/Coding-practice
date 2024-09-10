@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "counts.h"
-
+// ../34_put_together, symbolink to ../33_counts/
 // Function to create and initialize a counts_t structure
 counts_t * createCounts(void) {
   counts_t * counts = malloc(sizeof(*counts));

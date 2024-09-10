@@ -1,0 +1,173 @@
+Poker: Almost There!
+--------------------
+Now it is time to wrap up your poker project!
+
+You have four major things to do:
+ (1) Write a few deck/evaluation functions that need
+     malloc/realloc/free (which you were not ready for in
+     Course 3).  
+ (2) Write the code to handle unknown cards (which
+     we'll call "future cards" because they will be
+     known in the future).
+ (3) Read the input.
+ (4) Write a main function, which puts this all together
+     and does the Monte Carlo simulation loop
+     (repeatedly drawing different random cards
+     for the future cards).
+
+We're going to split this into 3 parts.  In this assignment,
+you will do (1) above.  In the next assignment, you will do (2) and (3),
+which will work together to process the input.  In the final assignment,
+you will do (4), completing this project!
+
+
+Finish deck/evaluation
+----------------------
+Add these functions to deck.c:
+ - void add_card_to(deck_t * deck, card_t c);
+   Add the particular card to the given deck (which will
+   involve reallocing the array of cards in that deck).
+ - card_t * add_empty_card(deck_t * deck);
+   Add a card whose value and suit are both 0, and return a pointer
+   to it in the deck.
+   This will add an invalid card to use as a placeholder
+   for an unknown card.
+ - deck_t * make_deck_exclude(deck_t * excluded_cards);
+   Create a deck that is full EXCEPT for all the cards
+   that appear in excluded_cards.  For example,
+   if excluded_cards has Kh and Qs, you would create
+   a deck with 50 cards---all of them except Kh and Qs.
+   You will need to use malloc to allocate this deck.
+   (You will want this for the next function).
+   Don't forget you wrote card_t card_from_num(unsigned c)
+   in Course 2 and int deck_contains(deck_t * d, card_t c)
+   in Course 3!  They might be useful here.
+ - deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands) ;
+   This function takes an array of hands (remember
+   that we use deck_t to represent a hand).  It then builds
+   the deck of cards that remain after those cards have
+   been removed from a full deck.  For example, if we have
+   two hands:
+      Kh Qs ?0 ?1 ?2 ?3 ?4
+      As Ac ?0 ?1 ?2 ?3 ?4
+   then this function should build a deck with 48
+   cards (all but As Ac Kh Qs).  You can just build
+   one deck with all the cards from all the hands
+   (remember you just wrote add_card_to),
+   and then pass it to make_deck_exclude.
+ - void free_deck(deck_t * deck) ;
+   Free the memory allocated to a deck of cards.
+   For example, if you do
+     deck_t * d = make_excluded_deck(something);
+     free_deck(d);
+   it should free all the memory allocated by make_excluded_deck.
+   Once you have written it, add calls to free_deck anywhere you
+   need to to avoid memory leaks.
+
+Next, go back to eval.c, and implement:
+ - unsigned * get_match_counts(deck_t * hand) ;
+   You will find its prototype after the code you wrote
+   in Course 3, and before the functions we
+   provided for you.  Replace the prototype with
+   your implementation.
+
+   Given a hand (deck_t) of cards, this function
+   allocates an array of unsigned ints with as
+   many elements as there are cards in the hand.
+   It then fills in this array with
+   the "match counts" of the corresponding cards.
+   That is, for each card in the original hand,
+   the value in the match count array
+   is how many times a card of the same
+   value appears in the hand.  For example,
+   given
+     Ks Kh Qs Qh 0s 9d 9c 9h
+   This function would return
+     2  2  2  2  1  3  3  3
+   because there are 2 kings, 2 queens,
+   1 ten, and 3 nines.
+
+We recommend you write your own testing code in a separate
+C file (e.g., test-c4deck.c) and run your own test cases
+before you submit.  When you are satisfied with the correctness
+of your code, you should grade this assignment.
+
+As a final note, we remind you that since previously released files
+have been symlinked into other directories you may need to add the
+original versions (as this is where your changes are reflected). For
+example, in this assignment we have you modify deck.c which is symlinked
+to ../c3prj1_deck/deck.c. This means when you submit the assignment you 
+need to add and commit the actual file, not the symlink itself.
+
+
+
+---
+
+扑克：快完成了！
+--------------------
+现在是时候结束你的扑克项目了！
+
+你有四件主要的事情要做：
+ (1) 编写一些需要 malloc/realloc/free 的牌组/评估函数（在课程 3 中你还没有准备好）。
+ (2) 编写处理未知牌的代码（我们称之为“未来牌”，因为它们将在未来被知道）。
+ (3) 读取输入。
+ (4) 编写一个主函数，将所有这些结合起来并进行蒙特卡洛模拟循环
+ （反复为未来牌抽取不同的随机牌）。
+
+我们将其分为 3 个部分。在这个作业中，你将完成上述的 (1)。
+在下一个作业中，你将完成 (2) 和 (3)，它们将一起处理输入。
+在最后一个作业中，你将完成 (4)，完成这个项目！
+
+
+完成牌组/评估
+----------------------
+将这些函数添加到 deck.c：
+ - void add_card_to(deck_t * deck, card_t c);
+   将特定的牌添加到给定的牌组中（这将涉及重新分配该牌组中的牌数组）。
+ - card_t * add_empty_card(deck_t * deck);
+   添加一张值和花色都为 0 的牌，并返回指向该牌组中它的指针。
+   这将添加一张无效牌作为未知牌的占位符。
+ - deck_t * make_deck_exclude(deck_t * excluded_cards);
+   创建一个除了出现在 excluded_cards 中的所有牌之外的完整牌组。
+   例如，如果 excluded_cards 中有 Kh 和 Qs，你将创建一个包含 50 张牌的
+   牌组——除了 Kh 和 Qs 的所有牌。你需要使用 malloc 来分配这个牌组。
+   （你会希望在下一个函数中使用它）。不要忘记你在课程 2 中
+   编写了 card_t card_from_num(unsigned c) 和在课程 3 中
+   编写了 int deck_contains(deck_t * d, card_t c)！它们在这里可能会有用。
+ - deck_t * build_remaining_deck(deck_t ** hands, size_t n_hands);
+   这个函数接受一个手牌数组（记住我们使用 deck_t 来表示一手牌）。
+   然后它构建一个在从完整牌组中移除这些牌之后剩下的牌组。例如，如果我们有两手牌：
+      Kh Qs ?0 ?1 ?2 ?3 ?4
+      As Ac ?0 ?1 ?2 ?3 ?4
+   那么这个函数应该构建一个包含 48 张牌的牌组（除了 As Ac Kh Qs 的所有牌）。
+   你可以只构建一个包含所有手牌中所有牌的牌组（记住你刚刚编写了 add_card_to），
+   然后将其传递给 make_deck_exclude。
+ - void free_deck(deck_t * deck);
+   释放分配给一副牌的内存。例如，如果你这样做
+     deck_t * d = make_excluded_deck(something);
+     free_deck(d);
+   它应该释放 make_excluded_deck 分配的所有内存。一旦你编写了它，
+   请在任何需要的地方添加对 free_deck 的调用，以避免内存泄漏。
+
+接下来，回到 eval.c，并实现：
+ - unsigned * get_match_counts(deck_t * hand);
+   你会在你在课程 3 中编写的代码之后和我们为你提供的函数之前找到它的原型。
+   用你的实现替换原型。
+
+   给定一手牌（deck_t），这个函数分配一个包含与手牌中牌的数量相同元素的无符号整数数组。
+   然后它用相应牌的“匹配计数”填充这个数组。也就是说，对于原手牌中的每张牌，
+   匹配计数数组中的值是手牌中出现相同值的牌的次数。例如，给定
+     Ks Kh Qs Qh 0s 9d 9c 9h
+   这个函数将返回
+     2  2  2  2  1  3  3  3
+   因为有 2 张国王，2 张皇后，1 张十，和 3 张九。
+
+我们建议你在一个单独的 C 文件（例如 test-c4deck.c）中编写你自己的测试代码，
+并运行你自己的测试用例，然后再提交。当你对代码的正确性满意时，你应该对这个作业进行评分。
+
+最后，我们提醒你，由于之前发布的文件已被符号链接到其他目录，你可能需要添加原始版本
+（因为这是你的更改反映的地方）。例如，在这个作业中，我们让你修改 deck.c，
+它被符号链接到 ../c3prj1_deck/deck.c。这意味着当你提交作业时，
+你需要添加和提交实际文件，而不是symlink符号链接本身。
+
+---
