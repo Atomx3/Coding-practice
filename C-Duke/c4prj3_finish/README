@@ -1,0 +1,151 @@
+Time to wrap it all up!  You are now going to write
+main, which puts it all together.  In particular,
+your program should take 1 or 2 command line arguments.
+The first is required, and is the name of the input
+file to read.  The second is optional and is the
+number of Monte Carlo trials to perform.  If it
+is not given, you should use 10,000 as a default value.
+
+ Here is the gist of what your main does:
+   - Check command line arguments/report errors
+   - Open the input file and read the hands in it
+     (you just wrote read_input!)
+   - Create a deck with the remaining cards
+     (you just wrote build_remaining_deck)
+   - Create an array to count how many times each hand
+     wins, with one more element for if there was a tie
+     (so if there are 2 hands, you should have 3 elements).
+     and initialize all its values to 0.
+   - Do each Monte Carlo trial (repeat num_trials times)
+        - Shuffle the deck of remaining cards
+	  (you wrote shuffle in Course 3)
+	- Assign unknown cards from the shuffled deck
+	  (you just wrote future_cards_from_deck)
+	- Use compare_hands (from Course 3) to
+	  figure out which hand won. Note that
+	  with potentially more than 2 hands,
+	  this is much like finding the max of
+	  an array, but using compare_hands
+	  instead of >.
+        - Increment the win count for the winning
+	  hand (or for the "ties" element of the array
+	  if there was a tie).
+   - After you do all your trials, you just need
+     to print your results, free any memory
+     you allocated, and close any open files.
+
+     You should use the following format strings to report your results.
+     For each hand, you should printf
+       "Hand %zu won %u / %u times (%.2f%%)\n"
+          where the %zu is the hand number (0,1,..)  [zu is for size_t]
+	  the first %u is the number of wins for that hand
+	  the second %u is the total number of trials
+	  the %.2f is the percentage that this win/trials ratio gives
+     Then you should printf one more line for the ties:
+       "And there were %u ties\n"
+          Where the %u is just a count of how many ties there were
+
+We're going to let you write your own Makefile for this assignment.
+This Makefile should create a program called "poker" when we run "make".
+
+Of course, you need to test this out before you submit
+it for grading.  This seems like a complicated piece
+of code, but you already have a lot of confidence in what you
+wrote in Courses 2 and 3---so thats a good start.  You
+have hopefully been testing most of the functions you
+wrote along the way.  If so, you are confident in them too.
+
+But that leaves testing your whole program, which performs
+random simulations---that can be tricky.  So how can you do it?
+To help you out, we have provided some test cases in provided-tests,
+along with the expected probabilities (in provided-tests/answers.txt)
+These probabilities are rounded to the nearest percent, and we
+don't expect your answer to be exact.  Also note that the probabiltiies
+do not always add to 100% since some hands have
+the possibility of ties. 
+
+If you have problems, you can make use of the testing
+infrastructure from eariler steps to help you sort
+out the problem.  For example, you could have your
+main print out each set of hands in a format
+that you could feed into test-eval.
+You could then see if your evaluation and our evaluation
+match up for each hand that your simuluation drew.
+(Hint: use diff, don't try to compare them by hand!)
+
+
+We'll note that we setup the Makefile to build things
+for debugging by default.  However, once your program
+works, if you want to run longer simulations faster
+you can do
+
+make clean
+make OTHERFLAGS=-O3
+
+which will build your program with optimizations,
+and it will run 2--3x faster.
+
+---
+
+是时候总结一下了！你现在要编写 `main` 函数，将所有部分整合在一起。
+特别是，你的程序应该接受 1 或 2 个命令行参数。
+第一个是必需的，是要读取的输入文件的名称。第二个是可选的，是要执行的蒙特卡罗试验次数。
+如果没有给出，你应该使用 10,000 作为默认值。
+
+以下是 `main` 函数的主要内容：
+- 检查命令行参数/报告错误
+- 打开输入文件并读取其中的手牌（你刚刚编写了 `read_input` 函数）
+- 创建一个包含剩余牌的牌堆（你刚刚编写了 `build_remaining_deck` 函数）
+- 创建一个数组来统计每手牌获胜的次数，外加一个元素用于记录平局次数
+（所以如果有 2 手牌，你应该有 3 个元素），
+并将所有值初始化为 0。
+- 进行每次蒙特卡罗试验（重复 `num_trials` 次）
+  - 洗牌剩余的牌堆（你在课程 3 中编写了 `shuffle` 函数）
+  - 从洗好的牌堆中分配未知的牌（你刚刚编写了 `future_cards_from_deck` 函数）
+  - 使用 `compare_hands`（来自课程 3）来确定哪手牌获胜。
+  注意，对于可能超过 2 手牌的情况，这就像是在数组中找到最大值，
+  但使用 `compare_hands` 而不是 `>`。
+  - 增加获胜手牌的胜利计数（如果是平局，则增加数组中“平局”元素的计数）。
+- 完成所有试验后，你只需打印结果，释放任何分配的内存，并关闭任何打开的文件。
+
+你应该使用以下格式字符串来报告结果。
+对于每手牌，你应该使用 `printf`：
+```
+Hand %zu won %u / %u times (%.2f%%)\n
+```
+其中 `%zu` 是手牌编号（0,1,..）[zu 是用于 `size_t` 的格式说明符]，
+第一个 `%u` 是该手牌的获胜次数，第二个 `%u` 是试验总次数，`%.2f` 
+是该胜利/试验比率给出的百分比。
+然后你应该再打印一行平局的情况：
+```
+And there were %u ties\n
+```
+其中 `%u` 只是平局的次数。
+
+我们将让你为这个作业编写自己的 Makefile。当我们运行 `make` 时，
+这个 Makefile 应该创建一个名为 `poker` 的程序。
+
+当然，在提交之前你需要测试一下。这似乎是一个复杂的代码，
+但你已经对在课程 2 和 3 中编写的内容充满信心——所以这是一个好的开始。
+你希望一路上已经测试了大多数编写的函数。如果是这样，你对它们也有信心。
+
+但这还剩下测试整个程序，它执行随机模拟——这可能很棘手。那么你该怎么做呢？
+为了帮助你，我们在 `provided-tests` 中提供了一些测试用例，
+以及预期的概率（在 `provided-tests/answers.txt` 中）。
+这些概率四舍五入到最近的百分比，我们不期望你的答案是精确的。
+还要注意，由于某些手牌有平局的可能性，概率并不总是加起来等于 100%。
+
+如果你有问题，可以利用早期步骤中的测试基础设施来帮助你解决问题。
+例如，你可以让你的 `main` 打印出每组手牌的格式，你可以将其输入到 `test-eval` 中。
+然后你可以查看你的评估和我们的评估是否匹配每手牌的模拟结果。
+（提示：使用 `diff`，不要试图手动比较它们！）
+
+我们注意到默认情况下我们设置 Makefile 来构建调试内容。然而，一旦你的程序工作，
+如果你想更快地运行更长时间的模拟，你可以执行：
+```
+make clean
+make OTHERFLAGS=-O3
+```
+这将使用优化构建你的程序，并且它将运行 2-3 倍更快。
+
+---
