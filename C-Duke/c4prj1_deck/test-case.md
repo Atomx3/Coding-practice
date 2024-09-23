@@ -1,29 +1,54 @@
 ## add main.c
-there is no main.c in the original source files 
+there is no main.c in the original source files
 so we add main.c for test case.
 
-## compile program 
-```gcc -o poker_program main.c deck.c eval.c cards.c -Wall -Werror```
+## compile program
+```gcc -o poker_program main.c c4prj1_deck.c c4prj1_eval.c cards.c -Wall -Werror```
 
 ```./poker_program```
 
 ## output results
 Deck after adding cards:
 As Kh
+
 Excluded deck:
 As Kh
-New deck excluding above cards:
-Ks 2s 3s 4s 5s 6s 7s 8s 9s 0s Js Qs Ah 2h 3h 4h 5h 6h 7h 8h 9h 0h Jh Qh Kd Ad 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Qd Kc Ac 2c 3c 4c 5c 6c 7c 8c 9c 0c Jc Qc
+
+New deck excluding above cards:  
+Ks 2s 3s 4s 5s  
+6s 7s 8s 9s 0s  
+Js Qs Ah 2h 3h   
+4h 5h 6h 7h 8h  
+9h 0h Jh Qh Kd  
+Ad 2d 3d 4d 5d  
+6d 7d 8d 9d 0d  
+Jd Qd Kc Ac 2c   
+3c 4c 5c 6c 7c   
+8c 9c 0c Jc Qc  
+
 Hand 1:
-As Kh
+As Kh  
+
 Hand 2:
-Qd Jc
-Remaining deck:
-Ks 2s 3s 4s 5s 6s 7s 8s 9s 0s Js Qs Ah 2h 3h 4h 5h 6h 7h 8h 9h 0h Jh Qh Kd Ad 2d 3d 4d 5d 6d 7d 8d 9d 0d Jd Kc Ac 2c 3c 4c 5c 6c 7c 8c 9c 0c Qc
-Hand:
-As Ah Kd Kc Ks
-Match counts:
-2 2 3 3 3
+Qd Jc  
+
+Remaining deck:  
+Ks 2s 3s 4s 5s   
+6s 7s 8s 9s 0s   
+Js Qs Ah 2h 3h  
+4h 5h 6h 7h 8h  
+9h 0h Jh Qh Kd  
+Ad 2d 3d 4d 5d  
+6d 7d 8d 9d 0d  
+Jd Kc Ac 2c 3c  
+4c 5c 6c 7c 8c  
+9c 0c Qc
+
+Hand:  
+As Ah Kd Kc Ks  
+
+Match counts:  
+2 2 3 3 3  
 
 It looks like your tests are running successfully! Here’s a summary of what each test is doing:
 

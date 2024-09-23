@@ -10,20 +10,15 @@
 部分代码直接引用自gpt或其他相同的题目。
 
 
-Debugging case：  
-% c++ 3.9.1.cpp  
-3.9.1.cpp:83:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]  
-for(auto p : v) {  
-^  
-3.9.1.cpp:83:16: warning: range-based for loop is a C++11 extension [-Wc++11-extensions]  
-for(auto p : v) {  
-^  
-2 warnings generated.  
+## Code test
+
+[Codility Test: How to Prepare for Coding Interviews – 6 Tips to Help You Pass](https://iglu.net/resources-coding-interview-preparation/)
+
+eg. 
+- leetCode
+- GeeksforGeeks
 
 
-## Standard compile in terminal of Macbook pro：  
-g++ -std=c++11 -o program 3.9.1.cpp
-./program 
 
 ## Simple compile 
 gcc program.c -o program
