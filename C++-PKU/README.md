@@ -3,9 +3,13 @@
 ## [程序设计与算法 Specialization]（https://www.coursera.org/specializations/biancheng-suanfa）
 
 ## Folder name
-- PKUC1
-- PKUC2
-- ......
+- C1, 计算导论与C语言基础
+- C2, C程序设计进阶
+- C3, C++程序设计
+- C4, 算法基础
+- C5, 数据结构基础
+- C6, 高级数据结构与算法
+- C7, 程序开发项目实践
 
 ### File name
 文件名规则：例如 2.3.3.cpp

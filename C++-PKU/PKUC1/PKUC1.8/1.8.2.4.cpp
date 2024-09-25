@@ -23,7 +23,6 @@
 样例输出
 yes
 
-
 */
 
 #include<iostream>

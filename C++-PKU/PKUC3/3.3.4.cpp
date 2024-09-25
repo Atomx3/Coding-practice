@@ -1,5 +1,5 @@
 /*
-3. C程序设计进阶
+3. C++程序设计
 3. 第3周
 4. 编程题＃4：魔兽世界之一：备战
 I have never played this game, but I finish this program with the help of AI.
