@@ -2,11 +2,17 @@
 3. C++程序设计
 4. 第4周
 4. 编程题＃4：大整数的加减乘除
+
+
 我已经有了“+，-，*，/” 四种运算符函数重载，用于相应的“+，-，*，/”计算。
 以下是用于除法运算的部分程序，其他三种暂时做了隐藏。
 可能需要“<, ==”等其他类型的运算符配合计算，如何尽可能减少
 其他类运算符的使用？请精简代码，尽可能重复使用各种运算符。
+
+this solution could not pass the test of old version of coursera examination.
+
 */
+
 
 #include <iostream>
 #include <vector>

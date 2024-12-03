@@ -21,7 +21,7 @@
 
 
 
-Debugging case：  
+## Debugging case：  
 % c++ 3.9.1.cpp  
 3.9.1.cpp:83:9: warning: 'auto' type specifier is a C++11 extension [-Wc++11-extensions]  
 for(auto p : v) {  
@@ -30,6 +30,11 @@ for(auto p : v) {
 for(auto p : v) {  
 ^  
 2 warnings generated.  
+
+
+## compile error
+有些題目無法通過coursera或 POJ 平台的作業評估，請注意，可能要求做的是填空題，已經提供了大部分代碼，只要求提交一部分代碼，
+所以提交文件格式例如 3.9.1.txt，而非 3.9.1.cpp。
 
 
 ## Standard compile in terminal of Macbook pro：  
