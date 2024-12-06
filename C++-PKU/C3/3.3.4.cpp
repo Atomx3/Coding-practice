@@ -3,12 +3,12 @@
 3. 第3周
 4. 编程题＃4：魔兽世界之一：备战
 
-
 魔兽游戏程序：
 3.3.4.cpp，编程题＃4：魔兽世界之一：备战
-3.5.1.cpp，编程题＃2： 魔兽世界之二：装备
+3.5.2.cpp，编程题＃2： 魔兽世界之二：装备
+3.6.4.cpp, 编程题＃4： 魔兽世界终极版
 
-I have never played this game, but I finish this program with the help of AI.
+I have never played this game, and finished this program with the help of AI.
 
 */
 
