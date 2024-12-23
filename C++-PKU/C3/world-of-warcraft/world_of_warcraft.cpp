@@ -1,24 +1,24 @@
 /***********************************************
-ħ�������ռ���
-���ʱ�䣺2017/12/31
-������
+魔兽世界终极版
+完成时间：2017/12/31
+邱世航
 ***********************************************/
 #include <iostream>
 #include <string>
 #include <iomanip>
 using namespace std;
-//#pragma warning(disable:4996)   // �ļ��ض���visual studio Ҫ�õ�
+//#pragma warning(disable:4996)   // 文件重定向，visual studio 要用到
 
 /***********************************************
-ȫ�ֱ�����
-��ħ��˾�������ʿ��˳��{ 2,3,4,1,0 }
-��ħ��˾�������ʿ��˳��{ 3,0,1,2,4 }
-TOTALTIME����ʱ��
-arrow_atk�������Ĺ�����
-loyalty_loss���ҳ϶ȵ���ʧ
-initialLifeValue��˾��ĳ�ʼ����Ԫ
-numOfCity����������
-GameOver����Ϸ�Ƿ����
+全局变量：
+红魔军司令部生产武士的顺序：{ 2,3,4,1,0 }
+蓝魔军司令部生产武士的顺序：{ 3,0,1,2,4 }
+TOTALTIME：总时间
+arrow_atk：弓箭的攻击力
+loyalty_loss：忠诚度的损失
+initialLifeValue：司令部的初始生命元
+numOfCity：城市数量
+GameOver：游戏是否结束
 ***********************************************/
 int redOrder[5] = { 2,3,4,1,0 };
 int blueOrder[5] = { 3,0,1,2,4 };
@@ -29,7 +29,7 @@ int initialLifeValue, numOfCity;
 bool GameOver = false;
 
 /***********************************************
-ʱ����
+时间类
 ***********************************************/
 class Time
 {
@@ -54,15 +54,15 @@ public:
 	friend ostream& operator<<(ostream &o, const Time &t);
 };
 
-// ��Ϸʱ��
+// 游戏时间
 Time gameTime(0, 0);
 
 class Warrior;
 
 /***********************************************
-������
-void printMove()������ƶ���Ϣ
-void Fight()����Ҫ�Ǵ���40��ʱ�������¼�
+城市类
+void printMove()：输出移动信息
+void Fight()：主要是处理40分时发生的事件
 ***********************************************/
 class City
 {
@@ -101,15 +101,15 @@ public:
 	string get_flag() { return flag; }
 	Warrior* get_red() { return redWarrior; }
 	Warrior* get_blue() { return blueWarrior; }
-	virtual int get_numOfInvader() { return 0; }  // ��Ҫ�Ǹ�˾�ʹ��
+	virtual int get_numOfInvader() { return 0; }  // 主要是给司令部使用
 };
 
 /***********************************************
-˾���
-Warrior *invader�������������˽���˾�������Ϸ��������˶�һ������invader������Ƚ���˾��ĵ���
-void makeWarrior()��������ʿ
-void award()������ʤ������ʿ����Ԫ
-void reportElements()�����浱ǰ����Ԫ
+司令部类
+Warrior *invader：由于两名敌人进入司令部才算游戏结束，因此多一个变量invader来存放先进入司令部的敌人
+void makeWarrior()：制造武士
+void award()：奖励胜利的武士生命元
+void reportElements()：报告当前生命元
 ***********************************************/
 class Headquarter :public City
 {
@@ -151,7 +151,7 @@ public:
 	{
 		cout << gameTime << " " << LifeValue << " elements in " << alliance << " headquarter" << endl;
 	}
-	// ��ȡ��Ա�����ĺ���
+	// 获取成员变量的函数
 	string get_alliance() { return alliance; }
 	int get_LifeValue() { return LifeValue; }
 	int get_numOfWarrior() { return numOfWarrior; }
@@ -160,7 +160,7 @@ public:
 Headquarter red("red"), blue("blue");
 
 /***********************************************
-��ʿ��
+武士类
 ***********************************************/
 class Warrior
 {
@@ -172,15 +172,15 @@ protected:
 	int attack;
 	int weapon[3] = { 0 };
 	const string weaponName[3] = { "sword","bomb","arrow" };
-	string classes;   // ��ʿ���ࣺ"dragon","ninja","iceman","lion","wolf"
-	int classesID;    // ��ʿ�����ţ�0�� 1�� 2�� 3�� 4�� 5
+	string classes;   // 武士种类："dragon","ninja","iceman","lion","wolf"
+	int classesID;    // 武士种类编号：0， 1， 2， 3， 4， 5
 	friend Headquarter;
 	friend ostream& operator<<(ostream &o, const Warrior *w);
 public:
 	bool win;
-	static string warriorClasses[5];  // ������ʿ����
-	static int initialStrength[5];    // ��ʼ����
-	static int initialAttack[5];      // ��ʼ������
+	static string warriorClasses[5];  // 所有武士种类
+	static int initialStrength[5];    // 初始生命
+	static int initialAttack[5];      // 初始攻击力
 	Warrior() {}
 	Warrior(Headquarter *hq, int id, int s, int atk, int cid) :hq(hq), id(id), strength(s), attack(atk), classesID(cid), win(false)
 	{
@@ -240,7 +240,7 @@ void Warrior::Attack(Warrior *enemy)
 
 void Warrior::FightBack(Warrior *enemy)
 {
-	// ninja������
+	// ninja不反击
 	if (strength != 0 && classes != "ninja")
 	{
 		cout << gameTime << " " << this << " fought back against " << enemy << " in city " << pCity->get_id() << endl;
@@ -253,12 +253,12 @@ void Warrior::putArrow(Warrior *enemy)
 {
 	if (weapon[2] > 0 && enemy != NULL)
 	{
-		// ������˾������ʿ
+		// 不能射司令部里的武士
 		if (enemy->pCity->id == 0 || enemy->pCity->id == numOfCity + 1)
 		{
 			return;
 		}
-		enemy->Hurt(NULL, arrow_atk);  // ������޷����������Դ���NULLָ��
+		enemy->Hurt(NULL, arrow_atk);  // 被射击无法反击，所以传递NULL指针
 		weapon[2]--;
 		if (enemy->strength == 0)
 		{
@@ -282,10 +282,10 @@ void Warrior::bomb(Warrior *enemy)
 		bool redFirst = pCity->get_flag() == "red" || (pCity->get_flag() == "None" && pCity->id % 2 == 1);
 		if (redFirst && hq->alliance == "red" || !redFirst && hq->alliance == "blue")
 		{
-			// �ҷ��ȳ���������ɱ
+			// 我方先出击，被反杀
 			if (enemy->classes != "ninja" && attack + weapon[0] < enemy->strength && strength <= enemy->attack / 2 + enemy->weapon[0])
 			{
-				// ����ը��
+				// 引爆炸弹
 				strength = 0;
 				enemy->strength = 0;
 				pCity->redWarrior = NULL;
@@ -295,7 +295,7 @@ void Warrior::bomb(Warrior *enemy)
 		}
 		else if (strength <= enemy->attack + enemy->weapon[0])
 		{
-			// �з��ȳ������ᱻɱ��
+			// 敌方先出击，会被杀死
 			strength = 0;
 			enemy->strength = 0;
 			pCity->redWarrior = NULL;
@@ -313,7 +313,7 @@ void Warrior::Hurt(Warrior *enemy, int atk)
 		strength = 0;
 		if (enemy != NULL)
 		{
-			// enemy != NULL ˵���Ƿ�����ս�������Ǳ�����
+			// enemy != NULL 说明是发生了战争而不是被射死
 			enemy->win = true;
 			cout << gameTime << " " << this << " was killed in city " << pCity->get_id() << endl;
 		}
@@ -322,7 +322,7 @@ void Warrior::Hurt(Warrior *enemy, int atk)
 
 void Warrior::move()
 {
-	// ����ʿ�������ƶ�
+	// 红武士自西向东移动
 	if (hq->alliance == "red")
 	{
 		if (pCity->id == numOfCity + 1)
@@ -341,7 +341,7 @@ void Warrior::move()
 	}
 	else
 	{
-		// ����ʿ�Զ������ƶ�
+		// 蓝武士自东向西移动
 		if (pCity->id == 0)
 		{
 			pCity->blueWarrior = NULL;
@@ -359,7 +359,7 @@ void Warrior::move()
 
 }
 
-//��ȡ��������Ԫ���ܲ�
+//获取城市生命元给总部
 void Warrior::earn_elements()
 {
 	cout << gameTime << " " << this << " earned " << pCity->LifeValue << " elements for his headquarter" << endl;
@@ -367,7 +367,7 @@ void Warrior::earn_elements()
 	pCity->LifeValue = 0;
 }
 
-// ��������
+// 报告武器
 void Warrior::ReportWeapon()
 {
 	int num_weapon = (weapon[0] != 0) + (weapon[1] != 0) + (weapon[2] != 0);
@@ -405,12 +405,12 @@ void Warrior::ReportWeapon()
 }
 
 /***********************************************
-��ʿ�����ࣺDragon��
+武士派生类：Dragon类
 ***********************************************/
 class Dragon : public Warrior
 {
 private:
-	double morale; // ʿ��
+	double morale; // 士气
 public:
 	Dragon(Headquarter *hq, int id, int strength, int atk, double m, int cid = 0) :Warrior(hq, id, strength, atk, cid), morale(m)
 	{
@@ -424,7 +424,7 @@ public:
 	}
 	void yell()
 	{
-		// �ж��Ƿ���������
+		// 判断是否主动攻击
 		bool active_attack = (hq->get_alliance() == "red" && (pCity->get_flag() == "red" || (pCity->get_flag() == "None" && pCity->get_id() % 2 == 1)))
 			|| (hq->get_alliance() == "blue" && (pCity->get_flag() == "blue" || (pCity->get_flag() == "None" && pCity->get_id() % 2 == 0)));
 		if (morale > 0.8 && strength > 0 && active_attack)
@@ -441,7 +441,7 @@ public:
 };
 
 /***********************************************
-��ʿ�����ࣺNinja��
+武士派生类：Ninja类
 ***********************************************/
 class Ninja : public Warrior
 {
@@ -454,12 +454,12 @@ public:
 };
 
 /***********************************************
-��ʿ�����ࣺIceman��
+武士派生类：Iceman类
 ***********************************************/
 class Iceman : public Warrior
 {
 private:
-	int moveStep;  // �ƶ�����
+	int moveStep;  // 移动步数
 public:
 	Iceman(Headquarter *hq, int id, int strength, int atk, int cid = 2) : Warrior(hq, id, strength, atk, cid)
 	{
@@ -479,8 +479,8 @@ public:
 };
 
 /***********************************************
-��ʿ�������ࣺLion��
-���ԣ����ҳ϶ȣ�������
+武士类派生类：Lion类
+特性：有忠诚度，会逃跑
 ***********************************************/
 class Lion : public Warrior
 {
@@ -537,7 +537,7 @@ void Lion::Hurt(Warrior *enemy, int atk)
 	static int tmpStrength;
 	tmpStrength = strength;
 	Warrior::Hurt(enemy, atk);
-	// ��������ת������
+	// 被射死不转移生命
 	if (enemy == NULL)
 	{
 		return;
@@ -549,8 +549,8 @@ void Lion::Hurt(Warrior *enemy, int atk)
 }
 
 /***********************************************
-��ʿ�������ࣺWolf��
-�ص㣺���Խɻ���˵�����
+武士类派生类：Wolf类
+特点：可以缴获敌人的武器
 ***********************************************/
 class Wolf :public Warrior
 {
@@ -570,7 +570,7 @@ public:
 
 void Headquarter::makeWarrior()
 {
-	// ��ȡ��ǰ������ʿ�������ţ�����ֵ������ֵ
+	// 获取当前生产武士的种类编号，力量值，攻击值
 	int classID = ProduceOrder[numOfWarrior % 5];
 	int strength = Warrior::initialStrength[classID];
 	int atk = Warrior::initialAttack[classID];
@@ -628,7 +628,7 @@ void Headquarter::award(Warrior *w)
 
 void City::printMove()
 {
-	// ����ʿ���ֺ�˾�
+	// 蓝武士入侵红司令部
 	if (id == 0 && blueWarrior)
 	{
 		cout << gameTime << " " << blueWarrior << " reached red headquarter with " << blueWarrior->get_strength() << " elements and force " << blueWarrior->get_attack() << endl;
@@ -638,7 +638,7 @@ void City::printMove()
 			GameOver = true;
 		}
 	}
-	// ����ʿ������˾�
+	// 红武士入侵蓝司令部
 	else if (id == numOfCity + 1 && redWarrior)
 	{
 		cout << gameTime << " " << redWarrior << " reached blue headquarter with " << redWarrior->get_strength() << " elements and force " << redWarrior->get_attack() << endl;
@@ -663,7 +663,7 @@ void City::printMove()
 
 void City::Fight()
 {
-	// ֻ��һ����ʿ�ұ�������û�з���ս��
+	// 只有一个武士且被射死，没有发生战斗
 	if (!redWarrior && blueWarrior && blueWarrior->get_strength() == 0)
 	{
 		blueWarrior = NULL;
@@ -672,17 +672,17 @@ void City::Fight()
 	{
 		redWarrior = NULL;
 	}
-	// ������ʿ���ڣ���Ϊ������һ��ս��
+	// 红蓝武士都在，视为发生了一场战斗
 	if (redWarrior && blueWarrior)
 	{
-		// ��������
+		// 都被射死
 		if (redWarrior->get_strength() == 0 && blueWarrior->get_strength() == 0)
 		{
 			blueWarrior = NULL;
 			redWarrior = NULL;
 			return;
 		}
-		// һ��������
+		// 一方被射死
 		else if (redWarrior->get_strength() == 0 && blueWarrior->get_strength() > 0)
 		{
 			blueWarrior->win = true;
@@ -693,7 +693,7 @@ void City::Fight()
 			redWarrior->win = true;
 			redWarrior->yell();
 		}
-		// �ж�����������������ս��
+		// 判断主动攻击方，发生战斗
 		else
 		{
 			if (flag == "red" || (flag == "None" && id % 2 == 1))
@@ -708,8 +708,8 @@ void City::Fight()
 		if (redWarrior->win)
 		{
 			redWarrior->earn_elements();
-			redWarrior->disarm(blueWarrior);  // Wolf��е
-			if (lastWinner == "red" && flag != "red")  // ��ʤ����
+			redWarrior->disarm(blueWarrior);  // Wolf缴械
+			if (lastWinner == "red" && flag != "red")  // 连胜两次
 			{
 				set_flag("red");
 			}
@@ -735,8 +735,8 @@ void City::Fight()
 }
 
 /***********************************************
-������������
-�����ʿ��Ϣ��ʱ��
+输出运算符重载
+输出武士信息和时间
 ***********************************************/
 ostream& operator<<(ostream &o, const Warrior *w)
 {
@@ -751,11 +751,11 @@ ostream& operator<<(ostream &o, const Time &t)
 }
 
 /***********************************************
-������������
+主函数！！！
 ***********************************************/
 int main()
 {
-	// �ļ��ض���
+	// 文件重定向
 	//freopen("in.txt", "r", stdin);
 	//freopen("out.txt", "w", stdout);
 	int numOfTest = 0;
@@ -763,11 +763,11 @@ int main()
 
 	for (int i = 1; i <= numOfTest; i++)
 	{
-		// ����ȫ�ֱ���
+		// 重置全局变量
 		gameTime.init(0, 0);
 		GameOver = false;
 
-		// ��������
+		// 输入数据
 		cin >> initialLifeValue >> numOfCity >> arrow_atk >> loyalty_loss >> TOTALTIME;
 		for (int j = 0; j < 5; j++)
 		{
@@ -778,8 +778,8 @@ int main()
 			cin >> Warrior::initialAttack[j];
 		}
 
-		// �ܲ��ͳ��г�ʼ��
-		City* city[22];   // Ϊ���ó�����������ܲ�������Ϊָ��
+		// 总部和城市初始化
+		City* city[22];   // 为了让城市数组包含总部，声明为指针
 		for (int j = 1; j <= numOfCity; j++)
 		{
 			city[j] = new City;
@@ -792,11 +792,11 @@ int main()
 		}
 		city[0]->init(0, NULL, city[1]);
 		city[numOfCity + 1]->init(numOfCity + 1, city[numOfCity], NULL);
-		// һ��Ҫ�ȵ���City��init�ڵ���Headquarter��init
+		// 一定要先调用City的init在调用Headquarter的init
 		red.init(initialLifeValue, redOrder);
 		blue.init(initialLifeValue, blueOrder);
 
-		// ���Կ�ʼ
+		// 测试开始
 		cout << "Case " << i << ":" << endl;
 		while (true)
 		{
@@ -805,7 +805,7 @@ int main()
 				red.makeWarrior();
 				blue.makeWarrior();
 			}
-			if (gameTime.minute == 5)  // ʨ������
+			if (gameTime.minute == 5)  // 狮子逃跑
 			{
 				for (int j = 0; j <= numOfCity + 1; j++)
 				{
@@ -820,9 +820,9 @@ int main()
 					}
 				}
 			}
-			if (gameTime.minute == 10)  // ��ʿ�ƶ�
+			if (gameTime.minute == 10)  // 武士移动
 			{
-				// Ϊ�˷�ֹ�ƶ������һ��������Ϣ��ʧ�����ƶ������෴����move()
+				// 为了防止移动造成下一个城市信息损失，和移动方向相反调用move()
 				for (int j = numOfCity + 1; j >= 0; j--)
 				{
 					if (city[j]->get_red())
@@ -846,14 +846,14 @@ int main()
 					break;
 				}
 			}
-			if (gameTime.minute == 20)  // ���в�������Ԫ
+			if (gameTime.minute == 20)  // 城市产生生命元
 			{
 				for (int j = 1; j <= numOfCity; j++)
 				{
 					city[j]->produceLifeValue();
 				}
 			}
-			if (gameTime.minute == 30)  // ֻ��һ����ʿʱֱ��ȡ������Ԫ
+			if (gameTime.minute == 30)  // 只有一个武士时直接取走生命元
 			{
 				for (int j = 1; j <= numOfCity; j++)
 				{
@@ -867,7 +867,7 @@ int main()
 					}
 				}
 			}
-			if (gameTime.minute == 35)  // �ż�
+			if (gameTime.minute == 35)  // 放箭
 			{
 				for (int j = 1; j <= numOfCity; j++)
 				{
@@ -883,7 +883,7 @@ int main()
 					}
 				}
 			}
-			if (gameTime.minute == 38)  // ��ը��
+			if (gameTime.minute == 38)  // 放炸弹
 			{
 				for (int j = 1; j <= numOfCity; j++)
 				{
@@ -897,24 +897,24 @@ int main()
 					}
 				}
 			}
-			if (gameTime.minute == 40)  // ս��
+			if (gameTime.minute == 40)  // 战斗
 			{
 				for (int j = 1; j <= numOfCity; j++)
 				{
 					city[j]->Fight();
 				}
-				for (int j = 1; j <= numOfCity; j++)  // ���Ƚ����������
+				for (int j = 1; j <= numOfCity; j++)  // 优先奖励距离近的
 				{
 					red.award(city[j]->redWarrior);
 					blue.award(city[numOfCity - j + 1]->blueWarrior);
 				}
 			}
-			if (gameTime.minute == 50)  // ˾���������ֵ
+			if (gameTime.minute == 50)  // 司令部报告生命值
 			{
 				red.reportElements();
 				blue.reportElements();
 			}
-			if (gameTime.minute == 55)  // ��ʿ��������
+			if (gameTime.minute == 55)  // 武士报告武器
 			{
 				for (int j = 0; j <= numOfCity + 1; j++)
 				{
@@ -923,7 +923,7 @@ int main()
 						city[j]->get_red()->ReportWeapon();
 					}
 				}
-				if (blue.invader)   // ���ֵ��ܲ�����ʿҲҪ����
+				if (blue.invader)   // 入侵到总部的武士也要报告
 				{
 					blue.invader->ReportWeapon();
 				}

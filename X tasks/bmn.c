@@ -2,12 +2,17 @@
 #include <stdlib.h>
 #include <string.h>
 #include <dirent.h>
-// bath change the file name such as
+#include <libgen.h>
+#include <wchar.h>
+#include <locale.h>
+// batch change the file name such as
 // C programming practicing resources e698726c9a1d4750818a368764a8f78a.md
 // C programming practicing resources.md
-// because the downloaded files of Notion all include long name.
+// some of ramdonizer create such kind of long name.
 
 void renameFiles(const char *directory) {
+    setlocale(LC_ALL, "");
+
     struct dirent *entry;
     DIR *dp = opendir(directory);
 
@@ -17,36 +22,39 @@ void renameFiles(const char *directory) {
     }
 
     while ((entry = readdir(dp))) {
-        if (entry->d_type == DT_REG) { // Only process regular files
+        if (entry->d_type == DT_REG) {
             char oldName[256];
-            char newName[256];
             snprintf(oldName, sizeof(oldName), "%s/%s", directory, entry->d_name);
 
-            // Remove spaces and long strings from the file name
-            char *token = strtok(entry->d_name, " ");
-            char tempName[256] = "";
-            while (token != NULL) {
-                if (strlen(token) <= 20) {
-                    strcat(tempName, token);
-                }
-                token = strtok(NULL, " ");
-            }
+            char baseNameCopy[256];
+            strcpy(baseNameCopy, entry->d_name);
 
-            // Get the file extension
-            char *ext = strrchr(entry->d_name, '.');
+            char *baseName = basename(baseNameCopy);
+            char *ext = strrchr(baseName, '.');
+            char extStr[256] = "";
             if (ext != NULL) {
-                strcat(tempName, ext); // Keep the original extension
-            }
-
-            // Create the new file name
-            snprintf(newName, sizeof(newName), "%s/%s", directory, tempName);
-
-            // Rename the file
-            if (rename(oldName, newName) != 0) {
-                perror("rename");
+                strcpy(extStr, ext);
+                *ext = '\0';
             } else {
-                printf("Renamed: %s -> %s\n", oldName, newName);
+                continue; // Skip files without extensions
             }
+
+            char *lastSpace = strrchr(baseName, ' ');
+            if (lastSpace != NULL) {
+                char tempName[256];
+                strncpy(tempName, baseName, lastSpace - baseName); // Copy up to the last space
+                tempName[lastSpace - baseName] = '\0'; // Null-terminate
+                strcat(tempName, extStr); // Add the extension back
+
+                char newName[256];
+                snprintf(newName, sizeof(newName), "%s/%s", directory, tempName);
+
+                if (rename(oldName, newName) != 0) {
+                    wprintf(L"Rename failed: %ls -> %ls\n", oldName, newName);
+                } else {
+                    wprintf(L"Renamed: %ls -> %ls\n", oldName, newName);
+                }
+            } // else: filename doesn't have the space and long code, so skip
         }
     }
 
@@ -54,9 +62,7 @@ void renameFiles(const char *directory) {
 }
 
 int main() {
-    const char *directory = "."; // Use current directory
-
+    const char *directory = ".";
     renameFiles(directory);
-
     return 0;
 }
