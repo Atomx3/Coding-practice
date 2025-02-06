@@ -9,6 +9,8 @@
 // C programming practicing resources e698726c9a1d4750818a368764a8f78a.md
 // C programming practicing resources.md
 // some of ramdonizer create such kind of long name.
+// compile program：clang bmn.c -o bmn
+// ./bmn
 
 void renameFiles(const char *directory) {
     setlocale(LC_ALL, "");
