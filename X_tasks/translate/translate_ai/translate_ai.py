@@ -1,5 +1,5 @@
-# call gemini api, without parsing syntax of file format.
-# translation quality is not stable.
+# call gemini api and translate files in current directory, without parsing syntax of file format.
+# 
 import os  # For interacting with the operating system, like file paths.
 import logging  # For logging events, useful for debugging and monitoring.
 from google.cloud import aiplatform  # For accessing Vertex AI services.
