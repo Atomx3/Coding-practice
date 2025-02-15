@@ -1,0 +1,42 @@
+
+name: Translate Documentation
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'zhs/**'
+
+jobs:
+  translate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Translate to English
+      run: node translate.js zhs en
+
+    - name: Translate to German
+      run: node translate.js zhs de
+
+    - name: Translate to Russian
+      run: node translate.js zhs ru
+
+    - name: Commit and push translations
+      run: |
+        git config --global user.name "github-actions"
+        git config --global user.email "github-actions@github.com"
+        git add en/* de/* ru/*
+        git commit -m "Automated translation from zhs"
+        git push

@@ -1,0 +1,13 @@
+.gitbook/
+.DS_Store
+venv/
+.gitbook.yaml
+requirements.txt
+test.py
+.github/
+__pycache__
+zh/
+meta/
+en/
+ru/
+
