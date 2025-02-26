@@ -1,20 +1,21 @@
 ---
-beschreibung: Gute Gewohnheiten kultivieren, Lebensqualität verbessern!
+Beschreibung: Pflegen Sie gute Gewohnheiten und verbessern Sie die Lebensqualität!
 ---
 
-# Über uns
+# über uns
 
-Wir sind ein Treuhandunternehmen für die Verwaltung von hochwertigem Wohnraum.
 
-1. Wir sind nicht nur dem Vermieter gegenüber verantwortlich;
-2. Wir sind auch so weit wie möglich dem Mieter gegenüber verantwortlich;
+Wir sind Auftragsmakler für die hochwertige Bewirtschaftung von Wohnraum.
 
-Wir sind bestrebt, die zwischenmenschlichen Beziehungen in Wohngemeinschaften zu verbessern und Vermietern, Mietern, Nachbarn, Gemeinden und der Regierung zu helfen, angenehm zusammenzuarbeiten, um allen zu helfen, einschließlich Vermietern, Mietern, Studenten, Eltern usw.
+1. Nicht nur gegenüber dem Vermieter verantwortlich;
+2. Seien Sie auch den Mietern gegenüber so verantwortungsbewusst wie möglich.
 
-Wir befürworten einen korrekten Lebensstil und Verhaltensweisen, die zu körperlicher und geistiger Gesundheit, persönlichem Wachstum und Entwicklung sowie familiärer und gesellschaftlicher Verantwortung beitragen.
+Engagiert für die Verbesserung der zwischenmenschlichen Beziehungen in der Wohngemeinschaft und hilft Vermietern, Mietern, Nachbarn, Gemeinden und Regierungen, glücklich zusammenzuarbeiten, was allen zugute kommt, einschließlich Vermietern, Mietern, Studenten und Eltern ⋯⋯
 
-Wir werden eine Reihe von gemeinnützigen Organisationen, Unternehmen oder Sozialunternehmen gründen, um ein Gleichgewicht zwischen kommerziellen und öffentlichen Interessen zu schaffen und die Gesundheit der Umwelt sowie die soziale Ordnung und gute Sitten zu erhalten.
+Fördern Sie die richtige Lebens- und Verhaltensweise, die der körperlichen und geistigen Gesundheit, dem persönlichen Wachstum und der persönlichen Entwicklung sowie der familiären und sozialen Verantwortung zugute kommt.
 
-Durch konkrete Praxisszenarien werden wir Lebensausbildungslager einrichten, um wichtige Themen zu vermitteln, die in vielen Familien und Schulen nicht gelehrt werden.
+Wir werden eine Reihe gemeinnütziger Organisationen, Handelsunternehmen oder sozialer Unternehmen gründen, um kommerzielle und öffentliche Interessen in Einklang zu bringen und die Umwelt, die Gesundheit, die soziale Ordnung und gute Sitten aufrechtzuerhalten.
 
-Wir werden dazu beitragen, das soziale Ökosystem zu verbessern!
+Durch alle spezifischen praktischen Szenarien wird ein Lebenstrainingslager eingerichtet, um viele Schlüsselthemen zu vermitteln, die in Familien und Schulen nicht gelehrt werden.
+
+Wir helfen, die soziale Ökologie zu verbessern!

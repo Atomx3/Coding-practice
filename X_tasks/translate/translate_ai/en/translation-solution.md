@@ -1,23 +1,34 @@
-## Translation Solution
+---
+title: "翻译解决方案"
+date: 2025-02-16
+description: 培养良好习惯，提升生活品质！
+categories:
+  - IT
+tags:
+  - 互联网
+  - 数学&计算机
+  - AI
+---
 
-Due to the presence of members from 15 different language backgrounds in our church community, I have identified several issues:
 
-1. Some members' speeches are too long, taking up time from others.
-2. Some translation devices are damaged, malfunctioning, or have depleted batteries, rendering them unusable.
-3. Noise from the translation device's headphones or microphones, coupled with unclear speech from the translation staff, makes it difficult for the audience to hear or understand.
+# 翻译解决方案
 
-These issues limit the quality of our church's Sunday services. Therefore, I have considered implementing a translation solution using AI robots.
+由于我们的教会社群有15种母语的成员，我发现一些问题：
+1. 某些成员的演讲稿太长，占用其他人的时间；
+2. 部分翻译机损坏或故障、电池耗尽，导致无法正常运作；
+3. 由于翻译机的耳机或麦克风噪音、翻译工作人员讲话不清晰，导致听众听不清楚或无法理解；
 
-This solution offers the following advantages:
+这些问题限制了教会的主日服务质量，所以我考虑了一下，借助翻译ai机器人做出一个翻译方案。
 
-1. It can translate over 100 languages with virtually unlimited word count. Currently, the average translation accuracy reaches the level of a language master's student, and it requires no cost investment.
-2. It can calculate the word count of the speech before the speaker takes the stage and estimate the time required for the speech, facilitating the control of the event flow.
+此方案有以下优点：
+1. 可以翻译超过100种语言，几乎不限字词量，目前平均翻译准确率达到语言专业硕士生水平，不需要成本投入；
+2. 可以在演讲者上台前计算讲稿字词量，并预估演讲所需的时间，方便控制活动流程；
 
-This is the first draft. Since the source document is in simplified Chinese, some sections of my content use simplified slang, making the English and German translations appear somewhat awkward. I will continue to optimize the source document, but I am eager to share it with my brothers now.
 
-Additionally, I need to write several different versions of the document:
+这是第一版的草稿，由于源稿的语言是简体中文，我的部分章节内容使用简化的俚语，所以翻译成英文和德文的部分内容看起来有点奇怪，我将继续优化源稿，但我现在已经迫不及待想交给兄弟们看。
 
-- 1 poster (no more than 3 pages, 100 words)
-- 1 user manual (no more than 10 pages, 3000 words, for users including landlords, tenants, and preachers)
+另外我还需要写不同几个版本的档案：
+- 1份海报（长度不超过3页100字）
+- 1份使用说明手册（长度不超过10页3000字，使用者包括房东、房客、传道者）；
 
-Then, I will hold a public roadshow presentation with the above documents.
+然后，我将拿着以上的文件做公开路演讲解。

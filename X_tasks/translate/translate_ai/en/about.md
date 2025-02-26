@@ -1,20 +1,30 @@
 ---
-description: Cultivate good habits and improve your quality of life!
+title: "关于我们"
+date: 2025-02-16
+description: 培养良好习惯，提升生活品质！
+categories:
+  - IT
+tags:
+  - 互联网
+  - 数学&计算机
+  - AI
 ---
 
-# About Us
 
-We are a commission agent for high-quality management of residential space.
+# 关于我们
 
-1. Not only responsible to the landlord;
-2. Also responsible to the tenant as much as possible;
 
-Committed to improving the interpersonal relationship of the residential community, helping landlords, tenants, neighbors, communities, and governments to cooperate happily, benefiting everyone including landlords, tenants, students, parents...
+我们是住宅空间高品质管理的委托代理。
 
-Advocate for a correct lifestyle and behavior, which is conducive to physical and mental health, personal growth and development, family and social responsibility.
+1.不仅对房东负责；
+2、也尽可能对租户负责；
 
-We will establish a series of non-profit organizations, commercial companies or social enterprises to balance commercial and public interests, maintain environmental health and social order and good customs.
+致力于改善住宅社区人际关系，帮助房东、房客、邻居、社区、政府愉快合作，造福包括房东、房客、学生、家长在内的所有人…
 
-Through all specific practice scenarios, we will establish life training camps to teach many key topics that families and schools have not taught.
+提倡正确的生活方式和行为方式，有助于身心健康、个人成长和发展、家庭和社会责任。
 
-We will help improve the social ecology!
+我们将建立一系列非营利组织、商业公司或社会企业，以平衡商业和公共利益，维护环境健康和社会秩序和良好习俗。
+
+透过一切具体的实践场景，建立生活训练营，教导许多家庭和学校没有教授的关键主题。
+
+我们将协助改善社会生态！

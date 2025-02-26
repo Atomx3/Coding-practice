@@ -1,44 +1,42 @@
-## Lebenswerte
+# 生活價值觀
 
-Bitte listen Sie weitere ähnliche Sprichwörter, Redewendungen und berühmte Zitate aus verschiedenen ethnischen Kulturen auf!
+請列舉不同民族文化中的更多類似的成語典故、歇後語、名句！
 
-Im Folgenden finden Sie zwei gegensätzliche Lebensansätze, die im alten und modernen chinesischen Sprachraum verwendet werden.
+以下为古代和现代中文语境中，通常用於描述两种截然不同的生活態度。
 
-## Aktiv und engagiert
+## 积极和主动的
 
 - 君子必慎其所居，择邻而居。
 
-Erläuterung: Die Umgebung kann den Charakter und die Gesundheit eines Menschen beeinflussen. Daher sollte ein Gentleman seinen Wohnort sorgfältig auswählen und eine gute Nachbarschaft und Umgebung wählen.
+解释：环境能够影响人的气质和身体，所以君子一定要慎重选择居住的地方，选择一个好的邻居和环境来居住。
 
 - 修身、齐家、治国、平天下
 
-Erläuterung: Diese vier Lebensabschnitte betonen das Ideal der schrittweisen Erweiterung der Selbstkultivierung und des Verantwortungsbewusstseins für die Gesellschaft sowie den Einfluss der persönlichen Kultivierung auf Familie, Staat und Welt.
+解释：這四個人生階段強調了自我修養和社會責任感逐步擴展的理想，以及個人修養對家庭、國家和世界的影響。
 
-    - Selbstkultivierung: Zunächst muss man seinen eigenen Charakter und seine eigenen Fähigkeiten kultivieren, um körperlich und geistig gesund zu sein.
-    - Ordnung im eigenen Haus: Auf der Grundlage einer harmonischen Familie ist man in der Lage, den Staat zu regieren und ihn stabil und wohlhabend zu machen.
-    - Frieden in der Welt: Das ultimative Ziel ist es, eine Weltgemeinschaft und Weltfrieden zu erreichen.
+    - 修身：首先要修炼自己的品德和素質，做到身心端正。
+    - 治国：在家庭和谐的基础上，有能力治理国家，使国家安定繁荣。
+    - 平天下：最终目标是实现天下大同，世界和平。
 
 
-## Passiv und reaktiv
+## 消极和被动的
 
 - 躺平、得過且過、隨遇而安
 
-Erläuterung: Mangelnder Ehrgeiz, fehlende Planung und Ziele, kein Streben nach höheren Zielen, nur das Nötigste tun, keine zusätzlichen Anstrengungen unternehmen, mangelnde Motivation und Ehrgeiz, sich nur auf das unmittelbare Überleben konzentrieren, ohne langfristige Planung und Entwicklung zu berücksichtigen.
+解释：不求上進、缺乏計劃和目標、不追求更高目標、只求過得去、不做額外努力、缺乏動力和抱負，只關注眼前的生存而不考慮長遠的規劃和发展。
 
 - 苟且偷生
 
-Erläuterung: Beschreibt eine Person, die um des Überlebens willen ihre Würde oder Gerechtigkeit aufgibt und eine passive und feige Lebenseinstellung zeigt. Diese Redewendung hat eine negative Konnotation und bezieht sich auf eine Lebenseinstellung, die angesichts von Schwierigkeiten nicht nach Fortschritt strebt, sich dem Schicksal ergibt und nur ums Überleben kämpft, ohne Prinzipien zu beachten.
+解释： 形容人为了活命而不顾尊严或正义，表现出消极和怯懦的一种生活态度。这个成语有贬义，指的是在困难面前不求进取、随遇而安、仅仅为了生存而不顾原则的人生态度。
 
 
 
-## Dieses Leben kann ohne Bedauern sein!
+## 此生能無憾矣！
 
-Leider,
+很不幸，
 
-wir können das soziale Umfeld nicht ändern,
+我们无法改变外面的社会大环境，
 
-aber wir können unser eigenes kleines Lebensumfeld verändern,
+但我们可以改变自己生活的小环境，
 
-wenn wir nicht einmal die Dinge innerhalb der Mauern kontrollieren können,
-
-
+如果連围墙里面的事我们都管不了，

@@ -1,21 +1,21 @@
-## Übersetzung der Lösung für die Übersetzung
+# 翻譯解決方案
 
-Aufgrund der Tatsache, dass unsere Kirchengemeinde Mitglieder mit 15 verschiedenen Muttersprachen hat, habe ich einige Probleme festgestellt:
-1. Die Reden einiger Mitglieder sind zu lang und nehmen anderen die Zeit weg.
-2. Einige Übersetzungsgeräte sind beschädigt oder defekt, die Batterien sind leer, sodass sie nicht mehr richtig funktionieren.
-3. Aufgrund von Rauschen in den Kopfhörern oder Mikrofonen der Übersetzungsgeräte oder undeutlicher Sprache des Übersetzungspersonals können die Zuhörer nicht gut hören oder verstehen.
+由於我們的教會社群有15種母語的成員，我發現一些問題：
+1. 某些成員的演講稿太長，佔用其他人的時間；
+2. 部分翻譯機損壞或故障、電池耗盡，導致無法正常運作；
+3. 由於翻譯機的耳機或麥克風噪音、翻譯工作人員講話不清晰，導致聽眾聽不清楚或無法理解；
 
-Diese Probleme schränken die Qualität des Gottesdienstes in unserer Kirche ein. Daher habe ich überlegt, eine Übersetzungslösung mit Hilfe eines KI-Übersetzungsroboters zu entwickeln.
+這些問題限制了教會的主日服務質量，所以我考慮了一下，借助翻譯ai機器人做出一個翻譯方案。
 
-Diese Lösung hat folgende Vorteile:
-1. Sie kann über 100 Sprachen übersetzen, ist fast unbegrenzt in der Anzahl der Wörter und erreicht derzeit eine durchschnittliche Übersetzungsgenauigkeit auf dem Niveau eines Sprachwissenschaftlers mit Masterabschluss, ohne dass Kosten anfallen.
-2. Sie kann die Anzahl der Wörter in der Rede des Redners vor dem Auftritt berechnen und die benötigte Zeit für die Rede abschätzen, was die Kontrolle des Ablaufs der Veranstaltung erleichtert.
+此方案有以下優點：
+1. 可以翻譯超過100種語言，幾乎不限字詞量，目前平均翻譯準確率達到語言專業碩士生水平，不需要成本投入；
+2. 可以在演講者上台前計算講稿字詞量，並預估演講所需的時間，方便控制活動流程；
 
 
-Dies ist die erste Version des Entwurfs. Da die Sprache des Originaldokuments vereinfachtes Chinesisch ist, habe ich in einigen Abschnitten vereinfachte Umgangssprache verwendet, sodass die Übersetzung ins Englische und Deutsche etwas seltsam aussieht. Ich werde das Originaldokument weiter optimieren, aber ich kann es kaum erwarten, es meinen Brüdern und Schwestern zu zeigen.
+這是第一版的草稿，由於源稿的語言是簡體中文，我的部分章節內容使用簡化的俚語，所以翻譯成英文和德文的部分內容看起來有點奇怪，我將繼續優化源稿，但我現在已經迫不及待想交給兄弟們看。
 
-Außerdem muss ich noch verschiedene Versionen der Dokumente schreiben:
-- 1 Poster (nicht länger als 3 Seiten, 100 Wörter)
-- 1 Bedienungsanleitung (nicht länger als 10 Seiten, 3000 Wörter, für Vermieter, Mieter und Prediger)
+另外我還需要寫不同幾個版本的檔案：
+- 1份海報（長度不超過3頁100字）
+- 1份使用說明手冊（長度不超過10頁3000字，使用者包括房東、房客、傳道者）；
 
-Anschließend werde ich mit diesen Dokumenten eine öffentliche Präsentation halten.
+然後，我將拿著以上的文件做公開路演講解。
