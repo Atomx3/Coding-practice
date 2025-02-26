@@ -1,8 +1,12 @@
 
 # debug
+发现新的问题，这是你的幻觉吗？请改正，
 
-原文如下：
-''''
+1. 必须给每个文件都要翻译头信息；
+
+2. 不要复制头信息，翻译后覆盖原文，但是你把别的信息复制到头信息中，而且你的翻译错误，有幻觉。
+
+``` yaml
 ---
 title: "生活价值观"
 date: 2025-02-16
@@ -14,7 +18,46 @@ tags:
   - 数学&计算机
   - AI
 ---
+---
+title: "More Analogies from Different Cultures"
+date: 2023-10-26
+description: "Analogies and Idioms Reflecting Different Life Attitudes"
+categories: [Culture, Philosophy]
+tags: [idioms, philosophy, culture, life]
+---
 
+```
+
+3. 翻译错误，你没有尊重原文格式
+原文
+```md
+请列举不同民族文化中的更多类似的成语典故、歇后语、名句！
+
+以下为古代和现代中文语境中，通常用于描述两种截然不同的生活态度。
+
+## 积极和主动的
+
+```
+翻译后成为
+
+```md
+
+## More Analogies from Different Cultures
+
+Here are some common sayings in ancient and modern Chinese contexts, often used to describe two distinct attitudes towards life.
+
+## Positive and Proactive
+
+```
+
+
+4. 不需要下面的双引号
+
+- "[君子必慎其所居，择邻而居。 jūnzǐ bì shèn qí suǒ jū, zé lín ér jū] A gentleman is careful about where he lives and chooses his neighbors."
+
+
+
+--------
 
 请列举不同民族文化中的更多类似的成语典故、歇后语、名句！
 

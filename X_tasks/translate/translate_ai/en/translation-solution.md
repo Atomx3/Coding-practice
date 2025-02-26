@@ -10,25 +10,24 @@ tags:
   - AI
 ---
 
+# Translation Solution
 
-# 翻译解决方案
+Since our church community has members with 15 native languages, I have identified some problems:
+1. Some members' speeches are too long, taking up other people's time;
+2. Some translation machines are damaged or malfunctioning, and their batteries are exhausted, resulting in their inability to function properly;
+3. Due to the noise from the headphones or microphones of the translation machines and the unclear speech of the translation staff, the audience cannot hear or understand clearly;
 
-由于我们的教会社群有15种母语的成员，我发现一些问题：
-1. 某些成员的演讲稿太长，占用其他人的时间；
-2. 部分翻译机损坏或故障、电池耗尽，导致无法正常运作；
-3. 由于翻译机的耳机或麦克风噪音、翻译工作人员讲话不清晰，导致听众听不清楚或无法理解；
+These problems limit the quality of the church's Sunday services, so I considered using a translation AI robot to create a translation solution.
 
-这些问题限制了教会的主日服务质量，所以我考虑了一下，借助翻译ai机器人做出一个翻译方案。
-
-此方案有以下优点：
-1. 可以翻译超过100种语言，几乎不限字词量，目前平均翻译准确率达到语言专业硕士生水平，不需要成本投入；
-2. 可以在演讲者上台前计算讲稿字词量，并预估演讲所需的时间，方便控制活动流程；
+This solution has the following advantages:
+1. It can translate more than 100 languages, with almost unlimited words and phrases. Currently, the average translation accuracy rate has reached the level of a professional master's student in language, and there is no need for cost investment;
+2. It can calculate the number of words and phrases in the speech before the speaker takes the stage, and estimate the time required for the speech, which is convenient for controlling the activity process;
 
 
-这是第一版的草稿，由于源稿的语言是简体中文，我的部分章节内容使用简化的俚语，所以翻译成英文和德文的部分内容看起来有点奇怪，我将继续优化源稿，但我现在已经迫不及待想交给兄弟们看。
+This is the first draft. Since the language of the source document is Simplified Chinese, some of my chapters use simplified slang, so some of the content translated into English and German looks a bit strange. I will continue to optimize the source document, but I can't wait to show it to my brothers.
 
-另外我还需要写不同几个版本的档案：
-- 1份海报（长度不超过3页100字）
-- 1份使用说明手册（长度不超过10页3000字，使用者包括房东、房客、传道者）；
+In addition, I need to write several different versions of the document:
+- 1 poster (no more than 3 pages and 100 words)
+- 1 instruction manual (no more than 10 pages and 3000 words, users include landlords, tenants, and preachers);
 
-然后，我将拿着以上的文件做公开路演讲解。
+Then, I will give a public speech with the above documents.

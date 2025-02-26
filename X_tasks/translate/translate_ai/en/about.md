@@ -10,21 +10,19 @@ tags:
   - AI
 ---
 
+# About Us
 
-# 关于我们
+We are a professional agency for high-quality management of residential spaces.
 
+1. We are not only responsible to landlords;
+2. We are also responsible to tenants as much as possible;
 
-我们是住宅空间高品质管理的委托代理。
+We are committed to improving interpersonal relationships in residential communities, helping landlords, tenants, neighbors, communities, and governments cooperate happily, and benefiting everyone, including landlords, tenants, students, parents...
 
-1.不仅对房东负责；
-2、也尽可能对租户负责；
+We advocate correct lifestyles and behaviors, which are conducive to physical and mental health, personal growth and development, and family and social responsibility.
 
-致力于改善住宅社区人际关系，帮助房东、房客、邻居、社区、政府愉快合作，造福包括房东、房客、学生、家长在内的所有人…
+We will establish a series of non-profit organizations, commercial companies, or social enterprises to balance commercial and public interests, maintain environmental health, social order, and good customs.
 
-提倡正确的生活方式和行为方式，有助于身心健康、个人成长和发展、家庭和社会责任。
+Through all specific practical scenarios, we will establish life training camps to teach key topics that many families and schools do not teach.
 
-我们将建立一系列非营利组织、商业公司或社会企业，以平衡商业和公共利益，维护环境健康和社会秩序和良好习俗。
-
-透过一切具体的实践场景，建立生活训练营，教导许多家庭和学校没有教授的关键主题。
-
-我们将协助改善社会生态！
+We will help improve the social ecology!
