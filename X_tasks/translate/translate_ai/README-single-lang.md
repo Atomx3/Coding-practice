@@ -2,6 +2,8 @@
 
 使用AI 模型，单一语言版本文档的批量翻译 Batch file translation by AI，无需在程序中解析文件特定格式。
 
+使用方法：定义目标语言目录，将源语言文件存入，在根目录中运行程序即可`translate_ai.py`。
+
 
 ## 基本概念
 
@@ -44,7 +46,7 @@ Category:
 Tags:
 - Introduction
 ---
-# translate from en to zh-CN, keep keywords in front matter 
+# translate from en to zh-CN, keep keywords in front matter
 ---
 title: "普鲁斯特问卷- Atom"
 date: 2021-10-06
@@ -105,18 +107,32 @@ tags:
 ```
 
 ```md
-You are a professional translator. Please translate the following content from [SOURCE_LANGUAGE] to [TARGET_LANGUAGE].
+Translate the following content from {source_lang} to {target_lang}.  This is a {file_type} file, and preserving the original formatting is critical.
 
-Key requirements:
+**ABSOLUTELY CRITICAL INSTRUCTIONS:**
 
-- This is a [FORMAT] file. Meticulously preserve all original formatting, syntax markers, and structure.
-- For Markdown files, retain English keywords in the YAML frontmatter (e.g., title, date, description, categories, tags), the value after keywords must be translated.
-- For named entities (e.g., organization names, famous individuals, quotations, personal names, place names, books [including the Bible and classics], movie titles, Chinese idioms, proverbs, allegorical phrases, or any proper nouns), retain the original source language text and its Pinyin or Romanization alongside the target language translation using the format: "[Original Text Pinyin/Romanization] Translated Text".
-- Translate only the file content. Keep file and directory names in English for URL compatibility.
-- Provide a direct translation without additional explanations, context, or examples.
-- Maintain the original tone and style while ensuring cultural appropriateness.
+1.  **Preserve ALL Formatting:** Maintain *every* aspect of the original formatting. This includes, but is not limited to:
+    *   Markdown syntax (headings, lists, links, bold, italics, code blocks, etc.)
+    *   YAML structure (indentation, keys, values, lists) if present in a Markdown header or as a separate `.yaml` file.
+    *   Spacing (line breaks, indentation).
+    *   Any other file-type-specific formatting.
+    *   DO NOT add, remove, or alter any formatting elements.
 
+2.  **Named Entities:** Translate named entities as follows:
+    *   `Original Text [Pinyin/Romanization] Translated Text`
+    *   Include the original text in the source language.
+    *   Provide the Pinyin (for Chinese) or Romanization (for other languages) of the original text.
+    *   Provide the translation in the target language.
+    *   This applies to: organization names, personal names (both ordinary and famous), place names, book titles (including the Bible and classics), movie titles, Chinese idioms (成语典故), proverbs, allegorical phrases (歇后语), and any other proper nouns.
+
+3.  **File/Directory Names:** Do NOT translate file names or directory names. Keep them in English.
+
+4.  **YAML Keywords (Markdown Only):** If this is a Markdown file with a YAML header (front matter), keep the following YAML keywords in English: `title`, `date`, `description`, `categories`, `tags`.  Translate the *values* associated with these keywords.
+
+5. **Tone and Style:** Maintain the original tone and style of the text while ensuring the translation is culturally appropriate for the target language.
+
+**Input Text:**
+
+{text}
 
 ```
-
-
