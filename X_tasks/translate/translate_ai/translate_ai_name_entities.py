@@ -22,8 +22,8 @@ SOURCE_LANG = "zh-CN"
 TARGET_LANG = "en"
 TARGET_DIR_NAME = "en"
 MAX_OUTPUT_TOKENS = 8192
-TEMPERATURE = 0.3
-TOP_P = 0.3
+TEMPERATURE = 0.9
+TOP_P = 0.8
 
 # --- Translation Prompt Template ---
 TRANSLATION_PROMPT = """Translate the following content from {source_lang} to {target_lang}. This is a {file_type} file, and preserving the original formatting is critical.
@@ -37,14 +37,22 @@ TRANSLATION_PROMPT = """Translate the following content from {source_lang} to {t
     * Any other file-type-specific formatting.
     * DO NOT add, remove, or alter any formatting elements.
 
-2. **File/Directory Names:** Do NOT translate file names or directory names. Keep them in English.
+2. **Named Entities:** Translate named entities as follows:
+    * Include the original text in the source language.
+    * Provide the Pinyin (for Chinese) or Romanization (for other languages) of the original text.
+    * Provide the translation in the target language.
+    * This only applies to Chinese language: organization names, personal names, place names, book titles, movie titles, Chinese idioms (成语典故), proverbs, allegorical phrases (歇后语), and famous Cultural phrases and proper nouns.
+    * example: 近朱者赤，近墨者黑. (Jìn zhū zhě chì, jìn mò zhě hēi.) He who walks with the wise grows wise, but a companion of fools suffers harm.
+    * Note: Only use this named entities method for well-known or culturally significant in Chinese context. Avoid applying this to all words and sentences.
 
-3. **YAML Front Matter:**
+3. **File/Directory Names:** Do NOT translate file names or directory names. Keep them in English.
+
+4. **YAML Front Matter:**
     * Keep keywords in English: title, date, description, categories, tags
     * Translate values simply and directly
     * For tags/categories: translate to single clear terms without pinyin
 
-4. **Tone and Style:** Maintain the original tone and style of the text while ensuring the translation is culturally appropriate for the target language, And keep the translation style consistent.
+5. **Tone and Style:** Maintain the original tone and style of the text while ensuring the translation is culturally appropriate for the target language, And keep the translation style consistent.
 
 Input Text:
 """
