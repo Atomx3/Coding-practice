@@ -1,4 +1,13 @@
+.gitbook/
 .DS_Store
+venv/
+.venv/
+.gitbook.yaml
+requirements.txt
+test.py
+.github/
+__pycache__
+*.pyc
 **/.DS_Store
 .vscode/
 X_tasks/translate/samples_files/
