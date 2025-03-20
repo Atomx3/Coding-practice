@@ -1,3 +1,4 @@
+# Description: This script uses Google Cloud Translation API with Language Model (Translation LLM) to translate text files in a directory to a target language.
 import os
 import logging
 import time
@@ -15,17 +16,22 @@ import yaml
 
 # --- Configuration ---
 PROJECT_ID = os.environ.get("GOOGLE_CLOUD_PROJECT")
-LOCATION = "global"
+LOCATION = "us-central1" # "global" 
 CREDENTIALS_PATH = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-MODEL_NAME = "general/base"
+MODEL_NAME = "general/translation-llm" # "general/base" # 
 SOURCE_LANG = "zh-CN"
 TARGET_LANG = "en"
 TARGET_DIR_NAME = "en"
 MIME_TYPE = "text/plain"
 VOCABULARY_ID = None
+# Rate limiting to control API call frequency
+CALLS_PER_MINUTE = 15
+ONE_MINUTE = 60
+INITIAL_RETRY_DELAY = 2
+MAX_RETRIES = 5
 
-# 异常文件开关
-TRANSLATE_UNEXPECTED_LANGUAGES = True  # 默认关闭
+# meet the "unexpected language" files, decide whether to translate 
+TRANSLATE_UNEXPECTED_LANGUAGES = True  # true means translate anyway, false means skip
 
 
 def detect_language(text):
@@ -72,6 +78,7 @@ try:
     credentials = service_account.Credentials.from_service_account_file(CREDENTIALS_PATH)
     translate_client = translate.TranslationServiceClient(credentials=credentials)
     logging.info("Successfully initialized Translation API client.")
+    
 except Exception as e:
     logging.error(f"Error initializing services: {str(e)}")
     exit(1)
@@ -84,12 +91,6 @@ def get_file_type(file_path):
     if file_extension == ".yaml" or mime_type == "text/x-yaml": return "yaml"
     if file_extension == ".txt" or (mime_type and mime_type.startswith("text/")): return "text"
     return "unknown"
-
-# Rate limiting to control API call frequency
-CALLS_PER_MINUTE = 15
-ONE_MINUTE = 60
-INITIAL_RETRY_DELAY = 2
-MAX_RETRIES = 5
 
 @sleep_and_retry
 @limits(calls=CALLS_PER_MINUTE, period=ONE_MINUTE)
@@ -127,7 +128,7 @@ def translate_text_with_llm(text, target_lang, file_type, client):
     try:
         response = client.translate_text(request=request)
         translated_text = response.translations[0].translated_text
-        logging.info(f"LLM translated content: {translated_text}")  # 添加日志
+        logging.info(f"LLM translated content: {translated_text}")  # add logging
         return translated_text
     except Exception as e:
         logging.error(f"Translation LLM error: {e}")
