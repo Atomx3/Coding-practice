@@ -1,4 +1,3 @@
-# call general LLM - Gemni API to translate the text
 # prevents the gRPC warning message
 import os
 os.environ['GRPC_ENABLE_FORK_SUPPORT'] = '0'
@@ -23,8 +22,14 @@ SOURCE_LANG = "zh-CN"
 TARGET_LANG = "en"
 TARGET_DIR_NAME = "en"
 MAX_OUTPUT_TOKENS = 8192
-TEMPERATURE = 0.9
-TOP_P = 0.95
+TEMPERATURE = 0.3 # Adjust based on your preference
+TOP_P = 0.3
+
+# Rate limiting to control API call frequency
+CALLS_PER_MINUTE = 15  # Adjust based on your quota
+ONE_MINUTE = 60
+INITIAL_RETRY_DELAY = 2
+MAX_RETRIES = 5
 
 # --- Translation Prompt Template ---
 TRANSLATION_PROMPT = """Translate the following content from {source_lang} to {target_lang}. This is a {file_type} file, and preserving the original formatting is critical.
@@ -78,12 +83,6 @@ def get_file_type(file_path):
     if file_extension == ".txt" or (mime_type and mime_type.startswith("text/")): return "text"
     return "unknown"
 
-
-# Rate limiting to control API call frequency
-CALLS_PER_MINUTE = 15  # Adjust based on your quota
-ONE_MINUTE = 60
-INITIAL_RETRY_DELAY = 2
-MAX_RETRIES = 5
 @sleep_and_retry
 @limits(calls=CALLS_PER_MINUTE, period=ONE_MINUTE)
 
@@ -96,7 +95,7 @@ def translate_text_with_gemini(text, target_lang, file_type="text", model=model)
     prompt = TRANSLATION_PROMPT.format(
         file_type=file_type,
         source_lang=SOURCE_LANG,
-        target_lang=target_lang # Use the parameter, not global variable
+        target_lang=target_lang
     )
     for attempt in range(MAX_RETRIES):  # Insert here, before the try block
         try:
@@ -140,7 +139,7 @@ def translate_text_with_gemini(text, target_lang, file_type="text", model=model)
         logging.error(f"Gemini translation error: {e}")
         return None
 
-def is_already_translated(file_path, TARGET_LANG):
+def is_already_translated(file_path, target_lang):
     """Checks if file is already translated using Unicode character classification."""
     try:
         with open(file_path, 'r', encoding='utf-8') as f:
