@@ -20,7 +20,7 @@
 
 ## 调查过程
 
-为了确定额外开销的具体数量和规律，我们开发了一个专门的调试脚本`debug_api_overhead.py`，使用以下两种方法进行测试：
+为了确定额外开销的具体数量和规律，我们写了一个专门的调试脚本`debug_api_overhead.py`，使用以下两种方法进行测试：
 
 1. **实际文件测试**：使用真实的文档文件，截取不同长度的片段进行测试
 2. **二分查找测试**：通过二分查找算法，精确定位最大可接受的文本长度
@@ -99,5 +99,5 @@ Google Cloud Translation API 的 Translation LLM 模型在内部添加了大量�
 
 Google Cloud 的许多 API 都有可调整的配额限制（如每分钟请求数、每天请求数等），但文本长度限制是 API 设计的一部分，无法通过控制台或配额调整来修改。
 
-官方文档 [Cloud Translation - 配额和限制](https://cloud.google.com/translate/quotas?hl=zh-cn)
+在官方文档 [Cloud Translation - 配额和限制](https://cloud.google.com/translate/quotas?hl=zh-cn)，我们尚未找到相关字符量限制的相关规则。
 
