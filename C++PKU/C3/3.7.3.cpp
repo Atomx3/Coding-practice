@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-7. 第7周
+7. 第7 module
 3. 编程题＃3：整数的输出格式
 manipulators: 
 hex

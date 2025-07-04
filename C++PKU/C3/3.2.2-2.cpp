@@ -1,6 +1,6 @@
 /*
 3. C++程序设计
-2. 第2周
+2. 第2 module
 2. 简单的学生信息处理程序实现
 
 this solution does not have class structure

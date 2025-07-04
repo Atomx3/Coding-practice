@@ -1,6 +1,6 @@
 /*
 3. C++程序设计
-4. 第4周
+4. 第4 module
 3. 编程题＃3：
 
 this solution could not pass the test of old version of coursera examination.

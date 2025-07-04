@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-7. 第7周
+7. 第7 module
 2. 编程题＃2：实数的输出格式
 stream manipulator
 positive real number, double type

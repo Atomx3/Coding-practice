@@ -1,6 +1,6 @@
 /*
 3. C++程序设计
-5. 第5周
+5. 第5 module
 1. 编程题＃1：
 
 class MyString, 4 object (s1,s2,s3,s4),

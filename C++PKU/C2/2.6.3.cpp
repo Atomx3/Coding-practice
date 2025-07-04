@@ -1,6 +1,6 @@
 /*
 2. C程序设计进阶
-6. 第六周
+6. 第六 module
 3. 编程题＃3：寻找山顶
 Subject description: find the max int.
 input 2D array (m * n) with integers, 

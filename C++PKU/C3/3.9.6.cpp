@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-9. 第8周
+9. 第8 module
 6. 编程题＃6： priority queue练习题
 container
 

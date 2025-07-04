@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-9. 第8周
+9. 第8 module
 2. 编程题＃2：
 
 写一个自己的 CMyistream_iterator 模板，

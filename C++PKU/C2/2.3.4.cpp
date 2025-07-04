@@ -1,6 +1,6 @@
 /*
 2. C程序设计进阶
-3. 第三周
+3. 第三 module
 3. 编程题＃4：扩号匹配问题
 find pair of parenthesis in the array by recursion.
 the nearest boy(left side of parenthesis ) and girl(ride side of parenthesis), ignor the space.

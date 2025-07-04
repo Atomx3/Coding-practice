@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 3. C程序设计进阶
-2. 第2周
+2. 第2 module
 1. 编程题＃1：寻找下标
 
 

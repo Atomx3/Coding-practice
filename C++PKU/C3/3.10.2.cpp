@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-10. 第10周
+10. 第10 module
 2. 编程题＃2：
 
 "Number(int n)" declares the constructor 

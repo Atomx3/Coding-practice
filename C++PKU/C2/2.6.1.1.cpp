@@ -1,6 +1,6 @@
 /*
 2. C程序设计进阶
-6. 第六周
+6. 第六 module
 1. 编程题＃1：分配病房
 c++,
 another solution

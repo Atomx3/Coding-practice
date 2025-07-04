@@ -1,6 +1,6 @@
 /*
 2. C程序设计进阶
-9. 第9周
+9. 第9 module
 1. 编程题＃1：含k个3的数
 */
 #include <iostream>

@@ -1,6 +1,6 @@
 /*
 2. C程序设计进阶
-5. 第三周
+5. 第三 module
 1. 编程题＃1：计算矩阵边缘元素之和
 
 eg. input and output

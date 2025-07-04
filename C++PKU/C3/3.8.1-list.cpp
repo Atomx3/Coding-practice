@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-8. 第8周
+8. 第8 module
 1-list. 编程题＃1-list：
 
 output:

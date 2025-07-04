@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-10. 第10周
+10. 第10 module
 6. 编程题＃6：MyString
 
 input：none

@@ -1,6 +1,6 @@
 /*
 3. C程序设计进阶
-7. 第7周
+7. 第7 module
 4. 编程题＃4：字符串操作
 manipulators: 
 recursive functions from right to left: 
@@ -34,6 +34,7 @@ Op29adfk48
 Op29adfk48
 35a8
 */
+
 #include <iostream>
 #include <cctype>
 #include <cstdlib>

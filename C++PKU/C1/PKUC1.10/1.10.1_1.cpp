@@ -1,6 +1,6 @@
 /*
 1. 计算导论与C语言基础，系列第1课  
-10. 理性认识C程序 导论，第10周  
+10. 理性认识C程序 导论，第10module  
 1. 编程题＃1：求字母的个数
 another solution to the subject 1.
 

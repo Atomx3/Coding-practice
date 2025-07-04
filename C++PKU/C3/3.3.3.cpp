@@ -1,6 +1,6 @@
 /*
 3. C++程序设计
-3. 第3周
+3. 第3 module
 3. 编程题＃3：
 */
 #include <iostream>

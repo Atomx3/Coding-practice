@@ -1,7 +1,7 @@
 
 /*
 3. C程序设计进阶
-9. 第8周  
+9. 第8 module  
 4. 编程题#4: 字符串操作
 the same subject as 3.7.4.cpp
 but this one is failed, and will be improved.

@@ -3,7 +3,7 @@ using namespace std;
 
 /*
 2. C程序设计进阶
-3. 第三周
+3. 第三 module
 3. 编程题＃3：排队游戏
 */
 

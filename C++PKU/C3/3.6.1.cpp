@@ -1,6 +1,6 @@
 /*
 3. C++程序设计
-6. 第6周
+6. 第6 module
 1. 编程题＃1：
 polymorphism
 virtual function

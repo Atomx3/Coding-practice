@@ -19,7 +19,6 @@ eg.
 - GeeksforGeeks
 
 
-
 ## Simple compile 
 gcc program.c -o program
 ./program 
