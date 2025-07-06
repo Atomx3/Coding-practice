@@ -55,7 +55,7 @@ wwwww
 算法设计：
 采用优化后的BFS算法，通过 getBestFlipPosition 函数
 优先选择能影响最多白色砖块的涂画位置，从而提高计算效率。
-
+使用状态压缩和启发式策略，避免全量枚举。
 */
 
 #include <iostream>
